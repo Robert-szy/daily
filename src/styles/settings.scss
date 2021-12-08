@@ -1,0 +1,40 @@
+//Variables
+$white:	#ffffff;
+$yellow: #e9e600;
+$liteGray:	#f4f5f7;
+$gray:	#292929;
+$gray-3:	#e1e1e1;
+$gray-4:	#d8d8d8;
+$gray-5:	#b6b6b6;
+$gray-6:	#a9a9a9;
+$gray-7:	#434343;
+$darkGray: #10150f;
+$mediumGreen: #afc0ab;
+$darkGreen: #20453d;
+$caramel: #F4F3E7;
+$darkCaramel: #e5dcc8;
+//end//
+
+
+$body-color: $caramel;
+$text-color: $darkGray;
+$primary: $darkGreen;
+
+$product-background: $darkCaramel;
+$productbox-border-color:	$gray-3;
+$productbox-color:	$darkGray;
+$productbox-bg:	$white;
+$footer-bg: $mediumGreen;
+$footer-light: $yellow;
+$menubar-bg:	$white;
+$cart-border-color: $gray-4;
+
+
+$base-padding: 24px;
+%hover-params {
+  transition: background-color 0.25s,
+    border-color 0.25s,
+    color 0.25s,
+    transform 0.25s,
+    opacity 0.25s;
+}

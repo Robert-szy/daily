@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-const multiplierSchema = new mongoose.Schema({
+const multipliersSchema = new mongoose.Schema({
+  id: {type: String, required: true},
   sugarMultiply: { type: String, required: true },
   fatMultiply: { type: String, required: true },
   acidMultiply: { type: String, required: true},
@@ -8,7 +9,7 @@ const multiplierSchema = new mongoose.Schema({
   foamProteinMultiply: { type: String, required: true},
   syrupMultiply: { type: String, required: true},
   appleMultiply: { type: String, required: true},
-  lemonMultipl: { type: String, required: true},
+  lemonMultiply: { type: String, required: true},
   orangeMultiply: { type: String, required: true},
   raspberryMultiply: { type: String, required: true},
   cherryMultiply: { type: String, required: true},
@@ -19,4 +20,4 @@ const multiplierSchema = new mongoose.Schema({
   agarWinterMultiply: { type: String, required: true},
 });
 
-module.exports = mongoose.model('Multiplier', multiplierSchema);
+module.exports = mongoose.model('Multipliers', multipliersSchema);
