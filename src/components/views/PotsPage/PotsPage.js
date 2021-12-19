@@ -1,8 +1,9 @@
 import React from 'react';
-import styles from './MultipliersPage.module.scss';
+import styles from './PotsPage.module.scss';
 import PropTypes from 'prop-types';
 
-class MultipliersPage extends React.Component {
+
+class PotsPage extends React.Component {
   state = {
     activePage: 0,
     editable: 'no',
@@ -11,32 +12,41 @@ class MultipliersPage extends React.Component {
 
   render() {
     const {
-      multipliers,
+      pots,
     } = this.props;
-
+    console.log('pots', pots);
     return (
       <div className={styles.root}>
         <div className='container'>
           <table className={styles.table}>
+
+            {/* <div className={'col-auto col-md ' + styles.menu}> */}
+            {/* <ul> */}
             <thead>
               <tr>
                 <th scope='col'>
-                  <p className={styles.header}>Mnożnik</p>
+                  <p className={styles.header}>Rodzaj</p>
                 </th>
                 <th scope='col'>
-                  <p className={styles.header}>Wartość</p>
+                  <p className={styles.header}>Pojemność</p>
+                </th>
+                <th scope='col'>
+                  <p className={styles.header}>Jednostka</p>
                 </th>
               </tr>
             </thead>
             <tbody>
-              {multipliers.map(item => (
+              {pots.map(item => (
                 <tr key={item.id}>
                   {/* <Link */}
                   <th scope='row'>
-                    <p className={styles.header}>{item.multiplierName}</p>
+                    <p className={styles.header}>{item.potName}</p>
                   </th>
                   <td>
-                    <p className={styles.data}>{item.multiplierValue}</p>
+                    <p className={styles.data}>{item.potValue}</p>
+                  </td>
+                  <td>
+                    <p className={styles.data}>kg</p>
                   </td>
                   {/* </Link> */}
                 </tr>
@@ -45,27 +55,29 @@ class MultipliersPage extends React.Component {
             </tbody>
           </table>
           {/* </ul> */}
+          {/* </div> */}
         </div>
       </div>
+
+
     );
   }
 }
 
-MultipliersPage.propTypes = {
-  multipliers: PropTypes.arrayOf(
+PotsPage.propTypes = {
+  pots: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
-      multiplierName: PropTypes.string,
-      multiplierValue: PropTypes.number,
+      potsName: PropTypes.string,
+      potsValue: PropTypes.number,
     }),
   ),
   // setScreenType: PropTypes.func,
   // maxProductsOnPage: PropTypes.number,
-  // addToCart: PropTypes.func,
 };
 
-MultipliersPage.defaultProps = {
-  multipliers: [],
+PotsPage.defaultProps = {
+  pots: [],
 };
 
-export default MultipliersPage;
+export default PotsPage;

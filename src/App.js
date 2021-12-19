@@ -8,11 +8,11 @@ import './styles/global.scss';
 
 import MainLayout from './components/layout/MainLayout/MainLayout';
 import Homepage from './components/views/Homepage/Homepage';
-import MultiplierPage from './components/views/MultipliersPage/MultipliersPage';
-// import Cart from './components/views/Cart/CartContainer';
-// import Order from './components/views/Order/OrderContainer';
-
-
+import OrdersPage from './components/views/OrdersPage/OrdersPageContainer';
+import PortionsPage from './components/views/PortionsPage/PortionsPageContainer';
+import MultipliersPage from './components/views/MultipliersPage/MultipliersPageContainer';
+import PotsPage from './components/views/PotsPage/PotsPageContainer';
+import WeightsPage from './components/views/WeightsPage/WeightsPageContainer';
 
 const App = () => (
   <Provider store={store}>
@@ -20,10 +20,18 @@ const App = () => (
       <MainLayout>
         <Switch>
           <Route exact path={'/'} component={Homepage} />
-          <Route exact path={'/multiplier'} component={MultiplierPage} />
-          <Route exact path={'/multiplier/:id'} component={MultiplierPage} />
-          {/* <Route exact path={'/cart'} component={Cart} /> */}
-          {/* <Route exact path={'/order'} component={Order} /> */}
+          <Route exact path={'/orders'} component={OrdersPage} />
+          {/* <Route exact path={'/orders/:id'} component={OrdersPage} /> */}
+
+          <Route exact path={'/portions'} component={PortionsPage} />
+          {/* <Route exact path={'/portions/:id'} component={PortionsPage} /> */}
+
+
+          <Route exact path={'/multipliers'} component={MultipliersPage} />
+          {/* <Route exact path={'/multipliers/:id'} component={MultipliersPage} /> */}
+          <Route exact path={'/pots'} component={PotsPage} />
+          <Route exact path={'/weights'} component={WeightsPage} />
+
         </Switch>
       </MainLayout>
     </BrowserRouter>

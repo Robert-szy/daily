@@ -2,20 +2,20 @@ import { combineReducers, createStore } from 'redux';
 import initialState from './initialState';
 
 import multipliersReducer from './multipliersRedux';
-// import ordersReducer from './ordersRedux';
-// import potsReducer from './potsRedux';
-// import portionsReducer from './portionsRedux';
-// import weightsReducer from './weightsRedux';
+import ordersReducer from './ordersRedux';
+import potsReducer from './potsRedux';
+import portionsReducer from './portionsRedux';
+import weightsReducer from './weightsRedux';
 
 
 
 // define reducers
 const reducers = {
   multipliers: multipliersReducer,
-  // orders: ordersReducer,
-  // pots: potsReducer,
-  // portions: portionsReducer,
-  // weights: weightsReducer,
+  orders: ordersReducer,
+  pots: potsReducer,
+  portions: portionsReducer,
+  weights: weightsReducer,
 };
 
 

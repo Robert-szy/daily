@@ -61,12 +61,7 @@ $desktop-width: 1200px;
       // padding: 10px;
     }
 
-    tr {
-      margin: 0;
-    }
-
     thead {
-      margin: 0px;
       .header {
         font-weight: bold;
         text-transform: uppercase;
@@ -84,7 +79,6 @@ $desktop-width: 1200px;
       // align-items: center;
       font-weight: 500;
       letter-spacing: 1px;
-      margin: 10px;
       @extend %hover-params;
 
       &:hover,
@@ -109,7 +103,6 @@ $desktop-width: 1200px;
       // align-items: center;
       font-weight: 500;
       letter-spacing: 1px;
-      margin: 13px;
       // @extend %hover-params;
 
       // &:hover,

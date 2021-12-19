@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// import Header from '../Header/Header';
+import Header from '../Header/Header';
 // import Footer from '../Footer/Footer';
 import styles from './MainLayout.module.scss';
 
 
 const MainLayout = ({ children }) => (
   <div className={styles.main}>
-    {/* <Header /> */}
+    <Header />
     {children}
     {/* <Footer /> */}
   </div>
