@@ -17,8 +17,8 @@ $desktop-width: 1200px;
 
 
 .root {
-  // box-shadow: 2px 3.464px 6px rgba(1, 2, 2, 0.2);
-  // background-color: $body-color;
+  box-shadow: 2px 3.464px 6px rgba(1, 2, 2, 0.2);
+  background-color: $body-bg;
 
   // :global(.container) > :global(.row) {
   //   height: 44px;
@@ -33,6 +33,9 @@ $desktop-width: 1200px;
   //   }
 
   // }
+
+  // background-color: aqua;
+
 
   .searchContainer {
     @include desktop {
@@ -78,6 +81,8 @@ $desktop-width: 1200px;
       color: $text-color;
       font-size: 12px;
       min-width: 100px;
+      // text-transform: uppercase;
+
       // padding: 1rem;
       text-decoration: none;
       // display: flex;
@@ -116,12 +121,18 @@ $desktop-width: 1200px;
       &.active {
         background-color: $primary;
         color: $menubar-bg;
-        border-color: $primary;
-      }
-
-      &.active {
         border-color: $text-color;
       }
+
+      // &.active {
+      //   border-color: $text-color;
+      // }
     }
+  }
+  &.active {
+    display: block;
+  }
+  &.hidden{
+    display: none;
   }
 }

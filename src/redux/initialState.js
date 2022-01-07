@@ -2,6 +2,13 @@ import { SIZE_TYPES } from '../screenSettings';
 
 const initialState = {
 
+  categories: [
+    { id: '/multipliers', name: 'Mnożniki' },
+    { id: '/weights', name: 'Współczynniki' },
+    { id: '/pots', name: 'Garnki' },
+
+  ],
+
   screenType: SIZE_TYPES.DESKTOP,
 
   multipliers: [
@@ -193,7 +200,7 @@ const initialState = {
 
   orders: [
     {
-      id: '2021-05-01T22:00:00Z',
+      data: '2021-05-01T22:00:00Z',
       b1: 1,
       b2: 0,
       danusia: 0,
@@ -211,7 +218,7 @@ const initialState = {
       yola: 1,
     },
     {
-      id: '2021-06-01T22:00:00Z',
+      data: '2021-06-01T22:00:00Z',
       b1: 2,
       b2: 1,
       danusia: 22,
@@ -228,19 +235,59 @@ const initialState = {
       bcbc: 0,
       yola: 0,
     },
+    {
+      data: '2021-07-01T22:00:00Z',
+      b1: 1,
+      b2: 0,
+      danusia: 0,
+      slomka: 0,
+      kostka: 7,
+      weronki: 0,
+      babeczki: 0,
+      kolor: 0,
+      pianka: 0,
+      bc: 0,
+      bj: 0,
+      bcm: 0,
+      bjm: 0,
+      bcbc: 1,
+      yola: 1,
+    },
   ],
 
   portions: [
     {
-      Data: '2021-05-01T22:00:00Z',
-      Porcja1: [],
-      Porcja2: [],
-      Porcja3: [],
-      Porcja4: [],
-      Porcja5: [],
-      Porcja6: [],
-      Porcja7: [],
-      Porcja8: [],
+      data: '2021-05-01T22:00:00Z',
+      porcja1: [],
+      porcja2: [],
+      porcja3: [],
+      porcja4: [],
+      porcja5: [],
+      porcja6: [],
+      porcja7: [],
+      porcja8: [],
+    },
+    {
+      data: '2021-05-01T22:00:00Z',
+      porcja1: [],
+      porcja2: [],
+      porcja3: [],
+      porcja4: [],
+      porcja5: [],
+      porcja6: [],
+      porcja7: [],
+      porcja8: [],
+    },
+    {
+      data: '2021-05-01T22:00:00Z',
+      porcja1: [],
+      porcja2: [],
+      porcja3: [],
+      porcja4: [],
+      porcja5: [],
+      porcja6: [],
+      porcja7: [],
+      porcja8: [],
     },
   ],
 

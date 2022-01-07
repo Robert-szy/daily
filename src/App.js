@@ -10,6 +10,8 @@ import MainLayout from './components/layout/MainLayout/MainLayout';
 import Homepage from './components/views/Homepage/Homepage';
 import OrdersPage from './components/views/OrdersPage/OrdersPageContainer';
 import PortionsPage from './components/views/PortionsPage/PortionsPageContainer';
+import ConfigPage from './components/views/ConfigPage/ConfigPageContainer';
+
 import MultipliersPage from './components/views/MultipliersPage/MultipliersPageContainer';
 import PotsPage from './components/views/PotsPage/PotsPageContainer';
 import WeightsPage from './components/views/WeightsPage/WeightsPageContainer';
@@ -26,9 +28,9 @@ const App = () => (
           <Route exact path={'/portions'} component={PortionsPage} />
           {/* <Route exact path={'/portions/:id'} component={PortionsPage} /> */}
 
+          <Route exact path={'/config'} component={ConfigPage} />
 
           <Route exact path={'/multipliers'} component={MultipliersPage} />
-          {/* <Route exact path={'/multipliers/:id'} component={MultipliersPage} /> */}
           <Route exact path={'/pots'} component={PotsPage} />
           <Route exact path={'/weights'} component={WeightsPage} />
 

@@ -17,8 +17,8 @@ $desktop-width: 1200px;
 
 
 .root {
-  // box-shadow: 2px 3.464px 6px rgba(1, 2, 2, 0.2);
-  // background-color: $body-color;
+  box-shadow: 2px 3.464px 6px rgba(1, 2, 2, 0.2);
+  background-color: $body-bg;
 
   // :global(.container) > :global(.row) {
   //   height: 44px;
@@ -34,6 +34,9 @@ $desktop-width: 1200px;
 
   // }
 
+  // background-color: aqua;
+  // display: none;
+
   .searchContainer {
     @include desktop {
       padding-bottom: 10px;
@@ -44,77 +47,96 @@ $desktop-width: 1200px;
     }
   }
 
-  table {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    // display: flex;
-    // align-self: center;
+  // .potsContainer {
+  //   display: none;
 
-    @include desktop {
-      // order: -1;
-      // padding: 5px;
-    }
+    table {
+      // display: table;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      // display: none;
+      // align-self: center;
 
-    @include mobile {
-      // order: 1;
-      // padding: 10px;
-    }
 
-    thead {
+
+      @include desktop {
+        // order: -1;
+        // padding: 5px;
+      }
+
+      @include mobile {
+        // order: 1;
+        // padding: 10px;
+      }
+
+      thead {
+        .header {
+          font-weight: bold;
+          text-transform: uppercase;
+
+        }
+      }
+
       .header {
-        font-weight: bold;
-        text-transform: uppercase;
+        color: $text-color;
+        font-size: 12px;
+        min-width: 100px;
+        // padding: 1rem;
+        text-decoration: none;
+        // display: flex;
+        // align-items: center;
+        font-weight: 500;
+        letter-spacing: 1px;
+        @extend %hover-params;
 
+        &:hover,
+        &.active {
+          background-color: $primary;
+          color: $menubar-bg;
+          border-color: $primary;
+        }
+
+        &.active {
+          border-color: $text-color;
+        }
       }
-    }
 
-    .header {
-      color: $text-color;
-      font-size: 12px;
-      min-width: 100px;
-      // padding: 1rem;
-      text-decoration: none;
-      // display: flex;
-      // align-items: center;
-      font-weight: 500;
-      letter-spacing: 1px;
-      @extend %hover-params;
+      .data {
+        color: $text-color;
+        // text-transform: uppercase;
+        font-size: 12px;
+        // padding: 1rem;
+        text-decoration: none;
+        // display: flex;
+        // align-items: center;
+        font-weight: 500;
+        letter-spacing: 1px;
+        // @extend %hover-params;
 
-      &:hover,
+        // &:hover,
+        // &.active {
+        //   background-color: $primary;
+        //   color: $menubar-bg;
+        //   border-color: $primary;
+        // }
+
+        // &.active {
+        //   border-color: $text-color;
+        // }
+      }
+      &.hidden {
+        display: none;
+      }
+
       &.active {
-        background-color: $primary;
-        color: $menubar-bg;
-        border-color: $primary;
+        display: table;
       }
+    // }
 
-      &.active {
-        border-color: $text-color;
-      }
-    }
 
-    .data {
-      color: $text-color;
-      // text-transform: uppercase;
-      font-size: 12px;
-      // padding: 1rem;
-      text-decoration: none;
-      // display: flex;
-      // align-items: center;
-      font-weight: 500;
-      letter-spacing: 1px;
-      // @extend %hover-params;
-
-      // &:hover,
-      &.active {
-        background-color: $primary;
-        color: $menubar-bg;
-        border-color: $primary;
-      }
-
-      &.active {
-        border-color: $text-color;
-      }
-    }
   }
+
+
 }
+

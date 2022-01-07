@@ -21,7 +21,7 @@ $desktop-width: 1200px;
   background-color: $body-color;
 
   :global(.container) > :global(.row) {
-    height: 84px;
+    height: 70px;
 
     @include desktop {
       height: 135px;

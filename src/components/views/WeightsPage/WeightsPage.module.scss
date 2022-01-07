@@ -18,8 +18,8 @@ $desktop-width: 1200px;
 
 
 .root {
-  // box-shadow: 2px 3.464px 6px rgba(1, 2, 2, 0.2);
-  // background-color: $body-color;
+  box-shadow: 2px 3.464px 6px rgba(1, 2, 2, 0.2);
+  background-color: $body-bg;
 
   // :global(.container) > :global(.row) {
   //   height: 44px;
@@ -34,6 +34,9 @@ $desktop-width: 1200px;
   //   }
 
   // }
+
+  // background-color: aqua;
+
 
   .searchContainer {
     @include desktop {

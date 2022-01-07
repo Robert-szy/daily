@@ -18,7 +18,7 @@ class PotsPage extends React.Component {
     return (
       <div className={styles.root}>
         <div className='container'>
-          <table className={styles.table}>
+          <table className={styles.active}>
 
             {/* <div className={'col-auto col-md ' + styles.menu}> */}
             {/* <ul> */}

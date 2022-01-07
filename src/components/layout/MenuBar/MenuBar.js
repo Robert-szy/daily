@@ -31,14 +31,8 @@ const MenuBar = ({ children }) => (
                 <Link to={`/portions`}>
                   <li className={'nav-item'}>Porcje</li>
                 </Link>
-                <Link to={`/multipliers`}>
-                  <li className={'nav-item'}>Mnożniki</li>
-                </Link>
-                <Link to={`/weights`}>
-                  <li className={'nav-item'}>Współczynniki</li>
-                </Link>
-                <Link to={`/pots`}>
-                  <li className={'nav-item'}>Garnki</li>
+                <Link to={`/config`}>
+                  <li className={'nav-item'}>Konfiguracja</li>
                 </Link>
               </ul>
             </div>

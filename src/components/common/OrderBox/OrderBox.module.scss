@@ -1,0 +1,37 @@
+@import "../../../styles/settings.scss";
+
+// $tablet-width: 768px;
+// $desktop-width: 1200px;
+
+// @mixin mobile {
+//   @media (max-width: #{$tablet-width - 1px}) {
+//     @content;
+//   }
+// }
+
+// @mixin desktop {
+//   @media (max-width: #{$desktop-width - 1px}) {
+//     @content;
+//   }
+// }
+
+
+.root {
+  .ordersBorder {
+    .ordersRow {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom: 10px;
+        border-color: $text-color;
+
+
+        p {
+          margin: 5px;
+          span {
+            font-weight: bold;
+          }
+        }
+      }
+  }
+}

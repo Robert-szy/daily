@@ -3,6 +3,7 @@ import styles from './OrdersPage.module.scss';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Swipeable from '../../common/Swipeable/Swipeable';
+import OrderBox from '../../common/OrderBox/OrderBox';
 
 
 
@@ -57,11 +58,13 @@ class OrdersPage extends React.Component {
   render() {
     const {
       orders,
+      // categories,
       screenType,
       maxOrdersOnPage,
+      maxTotalDisplayedOrders,
     } = this.props;
 
-    const { activeCategory, activePage, activePageStyle } = this.state;
+    const { activePage, activePageStyle } = this.state;
 
     const ordersPerPage = {
       [SIZE_TYPES.MOBILE]: 2,
@@ -73,15 +76,19 @@ class OrdersPage extends React.Component {
       ordersPerPage[screenType],
       maxOrdersOnPage,
     );
-    console.log('screenType', screenType);
-    console.log('ordersPerPage[screenType]', ordersPerPage[screenType]);
-    console.log('maxOrdersOnPage', maxOrdersOnPage);
+    // console.log('screenType', screenType);
+    // console.log('ordersPerPage[screenType]', ordersPerPage[screenType]);
+    // console.log('maxOrdersOnPage', maxOrdersOnPage);
 
 
+    const maxOrdersForDisplay = Math.min (orders.length, maxTotalDisplayedOrders);
+    const pagesCount = Math.ceil(maxOrdersForDisplay / actualOrdersOnPage);
+    // console.log('orders.length', orders.length);
+    // console.log('actualOrdersOnPage', actualOrdersOnPage);
+    // console.log('maxTotalDisplayedOrders', maxTotalDisplayedOrders);
 
-    const pagesCount = Math.ceil(orders.length / actualOrdersOnPage);
-    console.log('orders.length', orders.length);
-    console.log('actualOrdersOnPage', actualOrdersOnPage);
+    // console.log('maxOrdersForDisplay', maxOrdersForDisplay);
+
 
 
     const rightAction = () => {
@@ -100,7 +107,7 @@ class OrdersPage extends React.Component {
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
-      console.log('dots number', dots);
+      console.log('dots number', dots.length);
       dots.push(
         <li key={i}>
           <Link
@@ -151,65 +158,20 @@ class OrdersPage extends React.Component {
               </div>
             </div>
             <div className={'row ' + activePageStyle}>
-              {orders
-                .slice(
-                  activePage * actualOrdersOnPage,
-                  (activePage + 1) * actualOrdersOnPage
-                )
-                .map(item => (
-                  <div key={item.id}>
-                    <div className={styles.ordersTable}>
-                      <div className={styles.ordersRow}>
-                        <p><span>Data:</span> {item.id}</p>
-                      </div>
-                      <div className={styles.ordersRow}>
-                        <p><span>B1:</span>{item.b1}</p>
-                      </div>
-                      <div className={styles.ordersRow}>
-                        <p><span>B2:</span>{item.b2}</p>
-                      </div>
-                      <div className={styles.ordersRow}>
-                        <p><span>Danusia:</span>{item.danusia}</p>
-                      </div>
-                      <div className={styles.ordersRow}>
-                        <p><span>Słomka:</span>{item.slomka}</p>
-                      </div>
-                      <div className={styles.ordersRow}>
-                        <p><span>Kostka:</span>{item.kostka}</p>
-                      </div>
-                      <div className={styles.ordersRow}>
-                        <p><span>Weronki:</span>{item.weronki}</p>
-                      </div>
-                      <div className={styles.ordersRow}>
-                        <p><span>Babeczki:</span>{item.babeczki}</p>
-                      </div>
-                      <div className={styles.ordersRow}>
-                        <p><span>Kolor:</span>{item.kolor}</p>
-                      </div>
-                      <div className={styles.ordersRow}>
-                        <p><span>Pianka:</span>{item.pianka}</p>
-                      </div>
-                      <div className={styles.ordersRow}>
-                        <p><span>BC:</span>{item.bc}</p>
-                      </div>
-                      <div className={styles.ordersRow}>
-                        <p><span>BJ:</span>{item.bj}</p>
-                      </div>
-                      <div className={styles.ordersRow}>
-                        <p><span>BCM:</span>{item.bcm}</p>
-                      </div>
-                      <div className={styles.ordersRow}>
-                        <p><span>BJM:</span>{item.bjm}</p>
-                      </div>
-                      <div className={styles.ordersRow}>
-                        <p><span>BCBC:</span>{item.bcbc}</p>
-                      </div>
-                      <div className={styles.ordersRow}>
-                        <p><span>Yola:</span>{item.yola}</p>
-                      </div>
+              <div className={styles.ordersPage}>
+                {orders
+                  .slice(
+                    activePage * actualOrdersOnPage,
+                    (activePage + 1) * actualOrdersOnPage
+                  )
+                  .map(item => (
+                    <div key={item.id} className={styles.ordersTable}>
+                      <OrderBox
+                        {...item}
+                      />
                     </div>
-                  </div>
-                ))}
+                  ))}
+              </div>
             </div>
           </div>
         </div>
@@ -222,9 +184,16 @@ class OrdersPage extends React.Component {
 OrdersPage.propTypes = {
   screenType: PropTypes.string,
   children: PropTypes.node,
+  categories: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      name: PropTypes.string,
+    })
+  ),
   orders: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
+      data: PropTypes.string,
       B1: PropTypes.number,
       B2: PropTypes.number,
       Danusia: PropTypes.number,
@@ -242,12 +211,15 @@ OrdersPage.propTypes = {
   ),
   setScreenType: PropTypes.func,
   maxOrdersOnPage: PropTypes.number,
+  maxTotalDisplayedOrders: PropTypes.number,
 
 };
 
 OrdersPage.defaultProps = {
   orders: [],
+  categories: [],
   maxOrdersOnPage: 8,
+  maxTotalDisplayedOrders: 32,
 };
 
 export default OrdersPage;
