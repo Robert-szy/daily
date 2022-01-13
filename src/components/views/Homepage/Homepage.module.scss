@@ -1,1 +1,53 @@
 @import "../../../styles/settings.scss";
+
+$tablet-width: 768px;
+$desktop-width: 1200px;
+
+@mixin mobile {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+
+.root {
+  box-shadow: 2px 3.464px 6px rgba(1, 2, 2, 0.2);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  // background-color: $body-bg;
+
+  .homePage {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+
+      .mainBlock {
+      font-size: 12px;
+      text-transform: uppercase;
+      background-color: $body-bg;
+      box-shadow: 2px 3.464px 6px rgba(1, 2, 2, 0.2);
+
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-around;
+      }
+
+
+    //transformacja dla głównego elementu, bedzie bez hovera
+    // &:hover {
+    //   transform: scale(1.1);
+    //   background-color: $darkCaramel;
+    // }
+
+  }
+
+
+}

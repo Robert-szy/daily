@@ -200,7 +200,7 @@ const initialState = {
 
   orders: [
     {
-      data: '2021-05-01T22:00:00Z',
+      data: '2021/05/01',
       b1: 1,
       b2: 0,
       danusia: 0,
@@ -218,7 +218,7 @@ const initialState = {
       yola: 1,
     },
     {
-      data: '2021-06-01T22:00:00Z',
+      data: '2021/06/01',
       b1: 2,
       b2: 1,
       danusia: 22,
@@ -236,7 +236,7 @@ const initialState = {
       yola: 0,
     },
     {
-      data: '2021-07-01T22:00:00Z',
+      data: '2021/07/01',
       b1: 1,
       b2: 0,
       danusia: 0,
@@ -257,7 +257,7 @@ const initialState = {
 
   portions: [
     {
-      data: '2021-05-01T22:00:00Z',
+      data: '2021/05/01',
       porcja1: [],
       porcja2: [],
       porcja3: [],
@@ -268,7 +268,7 @@ const initialState = {
       porcja8: [],
     },
     {
-      data: '2021-05-01T22:00:00Z',
+      data: '2021/05/01',
       porcja1: [],
       porcja2: [],
       porcja3: [],
@@ -279,7 +279,7 @@ const initialState = {
       porcja8: [],
     },
     {
-      data: '2021-05-01T22:00:00Z',
+      data: '2021/05/01',
       porcja1: [],
       porcja2: [],
       porcja3: [],

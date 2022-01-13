@@ -7,7 +7,7 @@ import store from './redux/store';
 import './styles/global.scss';
 
 import MainLayout from './components/layout/MainLayout/MainLayout';
-import Homepage from './components/views/Homepage/Homepage';
+import Homepage from './components/views/Homepage/HomepageContainer';
 import OrdersPage from './components/views/OrdersPage/OrdersPageContainer';
 import PortionsPage from './components/views/PortionsPage/PortionsPageContainer';
 import ConfigPage from './components/views/ConfigPage/ConfigPageContainer';

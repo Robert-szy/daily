@@ -64,10 +64,13 @@ $desktop-width: 1200px;
       // padding: 10px;
     }
 
-    tr {
+    // tr {
+    //   margin: 0;
+    // }
+
+    .tr {
       margin: 0;
     }
-
     thead {
       margin: 0px;
       .header {
@@ -83,13 +86,15 @@ $desktop-width: 1200px;
       min-width: 100px;
       // text-transform: uppercase;
 
+      margin: 7px;
+
       // padding: 1rem;
       text-decoration: none;
       // display: flex;
       // align-items: center;
       font-weight: 500;
       letter-spacing: 1px;
-      margin: 10px;
+      // margin: 10px;
       @extend %hover-params;
 
       &:hover,
@@ -102,6 +107,8 @@ $desktop-width: 1200px;
       &.active {
         border-color: $text-color;
       }
+
+
     }
 
     .data {
@@ -114,7 +121,7 @@ $desktop-width: 1200px;
       // align-items: center;
       font-weight: 500;
       letter-spacing: 1px;
-      margin: 13px;
+      margin: 7px;
       // @extend %hover-params;
 
       // &:hover,
@@ -129,10 +136,10 @@ $desktop-width: 1200px;
       // }
     }
   }
-  &.active {
-    display: block;
-  }
-  &.hidden{
-    display: none;
-  }
+  // &.active {
+  //   display: block;
+  // }
+  // &.hidden{
+  //   display: none;
+  // }
 }

@@ -78,10 +78,22 @@ $desktop-width: 1200px;
         }
       }
 
+      // tbody {
+      //   tr {
+      //     height: 5px;
+      //     th {
+      //       height: 5px;
+
+      //     }
+      //   }
+      // }
       .header {
         color: $text-color;
         font-size: 12px;
         min-width: 100px;
+        margin: 7px;
+        // margin-top: 2px;
+        // margin-bottom: 2px;
         // padding: 1rem;
         text-decoration: none;
         // display: flex;
@@ -106,12 +118,16 @@ $desktop-width: 1200px;
         color: $text-color;
         // text-transform: uppercase;
         font-size: 12px;
+        // margin-top: 2px;
+        // margin-bottom: 2px;
         // padding: 1rem;
         text-decoration: none;
         // display: flex;
         // align-items: center;
         font-weight: 500;
         letter-spacing: 1px;
+        margin: 7px;
+
         // @extend %hover-params;
 
         // &:hover,
@@ -132,6 +148,9 @@ $desktop-width: 1200px;
       &.active {
         display: table;
       }
+      // p {
+      //   padding: 2px;
+      // }
     // }
 
 

@@ -64,6 +64,8 @@ class OrdersPage extends React.Component {
       maxTotalDisplayedOrders,
     } = this.props;
 
+    console.log('orders w orders', orders);
+
     const { activePage, activePageStyle } = this.state;
 
     const ordersPerPage = {
@@ -183,7 +185,7 @@ class OrdersPage extends React.Component {
 
 OrdersPage.propTypes = {
   screenType: PropTypes.string,
-  children: PropTypes.node,
+  // children: PropTypes.node,
   categories: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
