@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import Homepage from './Homepage';
 
 import { getAllOrders } from '../../../redux/ordersRedux.js';
+import { getAllPortions } from '../../../redux/portionsRedux.js';
+
 // import { getAllCat } from '../../../redux/categoriesRedux.js';
 import { getScreenType, setScreenType } from '../../../redux/screenTypeRedux';
 // import { getNew} from '../../../redux/productsRedux.js';
@@ -10,6 +12,7 @@ import { getScreenType, setScreenType } from '../../../redux/screenTypeRedux';
 
 const mapStateToProps = state => ({
   orders: getAllOrders(state),
+  portions: getAllPortions(state),
   // categories: getAllCat(state),
   screenType: getScreenType(state),
 });

@@ -18,6 +18,7 @@ class Homepage extends React.Component {
   render() {
     const {
       orders,
+      portions,
       // categories,
       screenType,
       // maxOrdersOnPage,
@@ -27,6 +28,7 @@ class Homepage extends React.Component {
     console.log('orders w homepage', orders);
 
     const { activePage, activePageStyle } = this.state;
+    let { order, date, portion } = this.state;
 
     const ordersPerPage = {
       [SIZE_TYPES.MOBILE]: 2,
@@ -39,8 +41,43 @@ class Homepage extends React.Component {
         <div className='container'>
           <div className={styles.homePage}>
             <div className={styles.mainBlock}>
-              <OrderBox/>
-              <PortionBox/>
+
+              {order = orders[orders.length-1],
+              date = order.data,
+
+
+              // .slice(
+              //   activePage * actualOrdersOnPage,
+              //   (activePage + 1) * actualOrdersOnPage
+              // )
+              // .map(item => (
+              console.log('id ostatniego w map', order),
+              console.log('data w id', date),
+
+              // <div key={item.id} className={styles.ordersTable}>
+              <OrderBox {...order}/>
+                // </div>
+              // ))
+              }
+
+              {portion = portions[portions.indexOf(date)],
+              console.log('all portions', portions),
+              console.log('portions[0]', portions[2]),
+              // tmp1 = portions[2],
+              // tmp2 = tmp1.indexOf(date),
+              // console.log('tmp1', tmp1),
+              // console.log('tmp2', tmp2),
+
+              portion = portions.find(portion => {
+                return portion.data === date;
+              }),
+
+              // console.log('result', result),
+              console.log('portion', portion),
+
+              /* <OrderBox/> */
+              <PortionBox {...portion}/>
+              }
             </div>
           </div>
         </div>
@@ -70,6 +107,20 @@ Homepage.propTypes = {
       BJM: PropTypes.number,
     }),
   ),
+  portions: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      data: PropTypes.string,
+      porcja1: PropTypes.array,
+      porcja2: PropTypes.array,
+      porcja3: PropTypes.array,
+      porcja4: PropTypes.array,
+      porcja5: PropTypes.array,
+      porcja6: PropTypes.array,
+      porcja7: PropTypes.array,
+      porcja8: PropTypes.array,
+    }),
+  ),
   screenType: PropTypes.string,
   setScreenType: PropTypes.func,
   maxOrdersOnPage: PropTypes.number,
@@ -79,6 +130,7 @@ Homepage.propTypes = {
 
 Homepage.defaultProps = {
   orders: [],
+  portions: [],
   categories: [],
   maxOrdersOnPage: 8,
   maxTotalDisplayedOrders: 32,

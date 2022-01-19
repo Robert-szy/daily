@@ -18,9 +18,14 @@
 
 .root {
   .ordersBorder {
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    justify-content: space-between;
+    padding: 10px;
     .ordersRow {
         display: flex;
-        flex-direction: row;
+        // flex-direction: row;
         justify-content: space-between;
         border-bottom: 10px;
         border-color: $text-color;
