@@ -18,25 +18,150 @@
 
 .root {
   .ordersBorder {
+
     display: flex;
+    width: 100%;
+    margin: 20px;
+    margin-bottom: 20px;
     flex-direction: column;
     // align-items: center;
     justify-content: space-between;
     padding: 10px;
-    .ordersRow {
+
+    .ordersData {
+      display: flex;
+      font-weight: bold;
+      font-size: 16px;
+      // flex-basis: 100%;
+      span {
+        padding-right: 20px;
+      }
+
+    }
+
+    .ordersBlock {
+      display: flex;
+      flex-direction: row;
+
+      .ordersGelly {
         display: flex;
-        // flex-direction: row;
-        justify-content: space-between;
-        border-bottom: 10px;
-        border-color: $text-color;
+        flex-direction: column;
+        margin-right: 10px;
+        .ordersHead {
+          .ordersRow {
+            display: flex;
+            // flex-direction: row;
+            justify-content: space-between;
+            border-bottom: 1px solid black;
 
+            // border-bottom: 10px;
+            // border-color: $text-color;
 
-        p {
-          margin: 5px;
-          span {
+            // th {
+            //   min-width: 80px;
+            // }
+
+            p {
+              margin: 5px;
+              text-align: center;
+              min-width: 80px;
+              span {
+                font-weight: bold;
+              }
+            }
+          }
+        }
+        .ordersBody {
+          .ordersRow {
+            display: flex;
+            // flex-direction: row;
+            justify-content: space-between;
+
+            // border-bottom: 10px;
+            // border-color: $text-color;
+
+            // th {
+            //   min-width: 80px;
+            // }
+
+            p {
+              margin: 5px;
+              text-align: center;
+              min-width: 80px;
+              span {
+                font-weight: bold;
+              }
+            }
+
+            td:nth-of-type(2) {
+              background-color: $caramel;
+            }
+          }
+          tr:nth-of-type(11) {
             font-weight: bold;
+            font-size: 13px;
+            td:nth-of-type(2) {
+              background-color: $darkCaramel;
+            }
           }
         }
       }
+
+      .ordersBars {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+
+        .ordersHead {
+          .ordersRow {
+            display: flex;
+            // flex-direction: row;
+            justify-content: space-between;
+            border-bottom: 1px solid black;
+
+            // border-bottom: 10px;
+            // border-color: $text-color;
+
+            // .cellData {
+            //   min-width: 80px;
+            // }
+
+            p {
+              margin: 5px;
+              text-align: center;
+              min-width: 80px;
+              span {
+                font-weight: bold;
+              }
+            }
+          }
+        }
+        .ordersBody {
+          .ordersRow {
+            display: flex;
+            // flex-direction: row;
+            justify-content: space-between;
+            // border-bottom: 10px;
+            // border-color: $text-color;
+
+            // .cellData {
+            //   min-width: 80px;
+            // }
+
+            p {
+              margin: 5px;
+              text-align: center;
+              min-width: 80px;
+              span {
+                font-weight: bold;
+              }
+            }
+            td:nth-of-type(2) {
+              background-color: $caramel;
+            }
+          }
+        }
+      }
+    }
   }
 }

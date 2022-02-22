@@ -11,6 +11,8 @@ class WeightsPage extends React.Component {
     activePage: 0,
     editable: 'no',
     activePageStyle: styles.fadeIn,
+    weights: this.props.weights,
+
   };
 
   render() {

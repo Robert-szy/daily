@@ -8,6 +8,8 @@ class PotsPage extends React.Component {
     activePage: 0,
     editable: 'no',
     activePageStyle: styles.fadeIn,
+    pots: this.props.pots,
+
   };
 
   render() {

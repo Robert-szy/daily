@@ -7,6 +7,7 @@ class MultipliersPage extends React.Component {
     activePage: 0,
     editable: 'no',
     activePageStyle: styles.fadeIn,
+    multipliers: this.props.multipliers,
   };
 
   render() {

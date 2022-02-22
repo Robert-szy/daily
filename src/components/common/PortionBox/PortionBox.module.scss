@@ -19,53 +19,90 @@
 .root {
 
   .portionsBorder {
-    display: flex;
-    flex-direction: column;
-    // align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-
-    .portionsCell {
-      min-width: 70px;
-      text-align: center;
-    }
 
     .portionsHead {
-      display: flex;
-      // flex-direction: row;
-      justify-content: space-between;
       text-transform: none;
 
-      border-bottom: 10px;
-      border-color: $text-color;
-
-      p {
-        margin: 5px;
-
-        span {
-          font-weight: bold;
-        }
-      }
-
-      .portionsBaza {
-        font-style: italic;
-      }
-    }
-    .portionsData {
       .portionsRow {
         display: flex;
-        // flex-direction: row;
+        flex-direction: row;
         justify-content: space-between;
 
-        border-bottom: 10px;
-        border-color: $text-color;
+        border-bottom: 1px solid black;
+        // border-style: ;
+        // border-width: ;
+        // justify-items: center;
+
+        th {
+          min-width: 80px;
+
+          .portionsBaza {
+            font-style: italic;
+            text-transform: none;
+          }
+
+        }
+
         p {
           margin: 5px;
+          text-align: center;
+
           span {
             font-weight: bold;
           }
         }
       }
+    }
+
+    .portionsData {
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: space-between;
+      // // text-transform: none;
+
+      // border-bottom: 10px;
+      // border-color: $text-color;
+      .portionsRow {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        // justify-items: center;
+
+        // border-bottom: 10px;
+        // border-color: $text-color;
+        td {
+          min-width: 80px;
+
+          // p {
+          //   // margin: 5px;
+          //   text-align: center;
+          //   span {
+          //     font-weight: bold;
+          //   }
+          // }
+        }
+        p {
+          margin: 5px;
+          text-align: center;
+          span {
+            font-weight: bold;
+          }
+        }
+
+        td:nth-of-type(2) {
+          font-size: 10px;
+          font-style: italic;
+        }
+        td:nth-of-type(3) {
+          background-color: rgb(219, 245, 223);
+        }
+        td:nth-of-type(4) {
+          font-weight: bolder;
+          background-color: $caramel;
+
+        }
+      }
+
     }
   }
 }

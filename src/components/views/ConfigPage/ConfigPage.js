@@ -14,7 +14,7 @@ import WeightsPage from '../WeightsPage/WeightsPageContainer';
 import PotsPage from '../PotsPage/PotsPageContainer';
 
 
-class OrdersPage extends React.Component {
+class ConfigPage extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'mnozniki',
@@ -187,7 +187,7 @@ class OrdersPage extends React.Component {
           {isWeights && <WeightsPage />}
 
           {/* <div className={'row ' + activePageStyle}>
-              <div className={styles.ordersPage}>
+              <div className={styles.ConfigPage}>
                 {orders
                   .slice(
                     activePage * actualOrdersOnPage,
@@ -257,7 +257,7 @@ class OrdersPage extends React.Component {
   }
 }
 
-OrdersPage.propTypes = {
+ConfigPage.propTypes = {
   screenType: PropTypes.string,
   children: PropTypes.node,
   categories: PropTypes.arrayOf(
@@ -289,11 +289,11 @@ OrdersPage.propTypes = {
 
 };
 
-OrdersPage.defaultProps = {
+ConfigPage.defaultProps = {
   orders: [],
   // categories: [],
   // maxOrdersOnPage: 8,
   // maxOrdersDisplay: 32,
 };
 
-export default OrdersPage;
+export default ConfigPage;

@@ -19,15 +19,15 @@ class Homepage extends React.Component {
     const {
       orders,
       portions,
-      // categories,
+      multipliers,
+      weights,
+      pots,
       screenType,
-      // maxOrdersOnPage,
-      // maxTotalDisplayedOrders,
     } = this.props;
 
-    console.log('orders w homepage', orders);
+    // console.log('orders w homepage', orders);
 
-    const { activePage, activePageStyle } = this.state;
+    // const { activePage, activePageStyle } = this.state;
     let { order, date, portion } = this.state;
 
     const ordersPerPage = {
@@ -44,39 +44,15 @@ class Homepage extends React.Component {
 
               {order = orders[orders.length-1],
               date = order.data,
-
-
-              // .slice(
-              //   activePage * actualOrdersOnPage,
-              //   (activePage + 1) * actualOrdersOnPage
-              // )
-              // .map(item => (
-              console.log('id ostatniego w map', order),
-              console.log('data w id', date),
-
-              // <div key={item.id} className={styles.ordersTable}>
-              <OrderBox {...order}/>
-                // </div>
-              // ))
+              <OrderBox {...order} {...pots}/>
               }
 
-              {portion = portions[portions.indexOf(date)],
-              console.log('all portions', portions),
-              console.log('portions[0]', portions[2]),
-              // tmp1 = portions[2],
-              // tmp2 = tmp1.indexOf(date),
-              // console.log('tmp1', tmp1),
-              // console.log('tmp2', tmp2),
+              {
+                portion = portions.find(portion => {
+                  return portion.data === date;
+                }),
 
-              portion = portions.find(portion => {
-                return portion.data === date;
-              }),
-
-              // console.log('result', result),
-              console.log('portion', portion),
-
-              /* <OrderBox/> */
-              <PortionBox {...portion}/>
+                <PortionBox {...portion}/>
               }
             </div>
           </div>
@@ -121,6 +97,9 @@ Homepage.propTypes = {
       porcja8: PropTypes.array,
     }),
   ),
+  multipliers: PropTypes.array,
+  weights: PropTypes.array,
+  pots: PropTypes.array,
   screenType: PropTypes.string,
   setScreenType: PropTypes.func,
   maxOrdersOnPage: PropTypes.number,
