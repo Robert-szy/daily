@@ -8,7 +8,7 @@ const connectToDB = () => {
 
   // on success
   db.once('open', () => {
-    console.log('Connected to the database');
+    console.log('Connected to the database:' + db.name);
   });
 
   // on error

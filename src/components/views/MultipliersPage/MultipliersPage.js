@@ -15,6 +15,8 @@ class MultipliersPage extends React.Component {
       multipliers,
     } = this.props;
 
+    console.log('multipliers wmultiplierspage', multipliers);
+
     return (
       <div className={styles.root}>
         <div className='container'>

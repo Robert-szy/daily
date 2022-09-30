@@ -7,20 +7,31 @@ exports.getAll = async (req, res) => {
     // res.render('MultipliersPage', { title: 'Local Library Home', error: err, data: results });
 
     // res.send('NOT IMPLEMENTED: Author list');
-    res.json({multipliers: multipliers});
+    res.json({multiplier: multipliers});
     console.log('multipliersuuu', multipliers);
 
 
-    // Multipliers.find((err, multipliers) => {
-    //   if (err) return res.json({ success: false, error: err });
-    //   return res.json({ success: true, data: multipliers });
-    // });
+    Multipliers.find((err, multipliers) => {
+      if (err) return res.json({ success: false, error: err });
+      return res.json({ success: true, data: multipliers });
+    });
 
   }
   catch(err) {
     res.status(500).json({ message: err });
   }
 };
+
+
+// router.get('/departments', async (req, res) => {
+//   try {
+//     res.json(await Department.find());
+//   }
+//   catch(err) {
+//     res.status(500).json({ message: err });
+//   }
+// });
+
 
 exports.getId = async (req, res) => {
   try {

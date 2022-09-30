@@ -89,7 +89,7 @@ class ConfigPage extends React.Component {
 
   render() {
     const {
-      // orders,
+      orders,
       categories,
       screenType,
       // maxOrdersOnPage,
@@ -110,8 +110,9 @@ class ConfigPage extends React.Component {
 
     console.log('screenType', screenType);
     console.log('ordersPerPage[screenType]', ordersPerPage[screenType]);
-    // console.log('maxOrdersOnPage', maxOrdersOnPage);
-
+    console.log('this.props', this.props);
+    console.log('this.state', this.state);
+    console.log('categories w configpage', categories);
 
 
     // const pagesCount = Math.ceil(orders.length / actualOrdersOnPage);
@@ -266,31 +267,31 @@ ConfigPage.propTypes = {
       name: PropTypes.string,
     })
   ),
-  // orders: PropTypes.arrayOf(
-  //   PropTypes.shape({
-  //     id: PropTypes.string,
-  //     B1: PropTypes.number,
-  //     B2: PropTypes.number,
-  //     Danusia: PropTypes.number,
-  //     Slomka: PropTypes.number,
-  //     Kostka: PropTypes.number,
-  //     Weronki: PropTypes.number,
-  //     Babeczki: PropTypes.number,
-  //     Kolor: PropTypes.number,
-  //     Pianka: PropTypes.number,
-  //     BC: PropTypes.number,
-  //     BJ: PropTypes.number,
-  //     BCM: PropTypes.number,
-  //     BJM: PropTypes.number,
-  //   }),
-  // ),
+  orders: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      B1: PropTypes.number,
+      B2: PropTypes.number,
+      Danusia: PropTypes.number,
+      Slomka: PropTypes.number,
+      Kostka: PropTypes.number,
+      Weronki: PropTypes.number,
+      Babeczki: PropTypes.number,
+      Kolor: PropTypes.number,
+      Pianka: PropTypes.number,
+      BC: PropTypes.number,
+      BJ: PropTypes.number,
+      BCM: PropTypes.number,
+      BJM: PropTypes.number,
+    }),
+  ),
   setScreenType: PropTypes.func,
   // maxOrdersOnPage: PropTypes.number,
 
 };
 
 ConfigPage.defaultProps = {
-  orders: [],
+  // orders: [],
   // categories: [],
   // maxOrdersOnPage: 8,
   // maxOrdersDisplay: 32,

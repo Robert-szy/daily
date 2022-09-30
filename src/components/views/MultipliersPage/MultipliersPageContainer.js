@@ -14,10 +14,10 @@ const mapStateToProps = state => ({
   screenType: getScreenType(state),
 });
 
-const mapDispatcherToProps = dispatcher => ({
-  setScreenType: payload => dispatcher(setScreenType(payload)),
+const mapDispatchToProps = dispatch => ({
+  setScreenType: payload => dispatch(setScreenType(payload)),
   // addToCart: payload => dispatcher(addProduct(payload)),
 });
 
-export default connect(mapStateToProps, mapDispatcherToProps)(MultipliersPage);
+export default connect(mapStateToProps, mapDispatchToProps)(MultipliersPage);
 // export default connect(mapStateToProps)(MultipliersPage);

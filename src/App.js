@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import store from './redux/store';
+// import { Provider } from 'react-redux';
+// import store from './redux/store';
 
 // import './styles/bootstrap.scss';
 import './styles/global.scss';
@@ -17,27 +17,27 @@ import PotsPage from './components/views/PotsPage/PotsPageContainer';
 import WeightsPage from './components/views/WeightsPage/WeightsPageContainer';
 
 const App = () => (
-  <Provider store={store}>
-    <BrowserRouter>
-      <MainLayout>
-        <Switch>
-          <Route exact path={'/'} component={Homepage} />
-          <Route exact path={'/orders'} component={OrdersPage} />
-          {/* <Route exact path={'/orders/:id'} component={OrdersPage} /> */}
+  // <Provider store={store}>
+  <BrowserRouter>
+    <MainLayout>
+      <Switch>
+        <Route exact path={'/'} component={Homepage} />
+        <Route exact path={'/orders'} component={OrdersPage} />
+        {/* <Route exact path={'/orders/:id'} component={OrdersPage} /> */}
 
-          <Route exact path={'/portions'} component={PortionsPage} />
-          {/* <Route exact path={'/portions/:id'} component={PortionsPage} /> */}
+        <Route exact path={'/portions'} component={PortionsPage} />
+        {/* <Route exact path={'/portions/:id'} component={PortionsPage} /> */}
 
-          <Route exact path={'/config'} component={ConfigPage} />
+        <Route exact path={'/config'} component={ConfigPage} />
 
-          <Route exact path={'/multipliers'} component={MultipliersPage} />
-          <Route exact path={'/pots'} component={PotsPage} />
-          <Route exact path={'/weights'} component={WeightsPage} />
+        <Route exact path={'/multipliers'} component={MultipliersPage} />
+        <Route exact path={'/pots'} component={PotsPage} />
+        <Route exact path={'/weights'} component={WeightsPage} />
 
-        </Switch>
-      </MainLayout>
-    </BrowserRouter>
-  </Provider>
+      </Switch>
+    </MainLayout>
+  </BrowserRouter>
+  // </Provider>
 );
 
 

@@ -1,13 +1,27 @@
-import { combineReducers, createStore } from 'redux';
-import initialState from './initialState';
+import { combineReducers, createStore, compose } from 'redux';
+import initialStore from './initialStoreData';
+// import thunk from 'redux-thunk';
+// import { composeWithDevTools } from 'redux-devtools-extension';
+
 
 import multipliersReducer from './multipliersRedux';
 import ordersReducer from './ordersRedux';
 import potsReducer from './potsRedux';
 import portionsReducer from './portionsRedux';
 import weightsReducer from './weightsRedux';
+import categoriesReducer from './categoriesRedux';
+import screenTypeReducer from './screenTypeRedux';
 
-
+// define initial state and shallow-merge initial data
+const initialState = {
+  categories: initialStore.categories,
+  multipliers: initialStore.multipliers,
+  orders: initialStore.orders,
+  pots: initialStore.pots,
+  portions: initialStore.portions,
+  weights: initialStore.weights,
+  screenType: initialStore.screenType,
+};
 
 // define reducers
 const reducers = {
@@ -16,6 +30,8 @@ const reducers = {
   pots: potsReducer,
   portions: portionsReducer,
   weights: weightsReducer,
+  categories: categoriesReducer,
+  screenType: screenTypeReducer,
 };
 
 
@@ -26,15 +42,29 @@ Object.keys(initialState).forEach(item => {
   }
 });
 
-const combinedReducers = combineReducers(reducers);
+// merge all reducers
+const storeReducer = combineReducers(reducers);
+
+const enhancers = compose(
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 // create store
 const store = createStore(
-  combinedReducers,
+  storeReducer,
   initialState,
-  console.log('initialState', initialState),
+  enhancers,
 
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  console.log('initialStateeeee', initialState),
+
+
+
+  // composeWithDevTools(
+  //   applyMiddleware(thunk),
+  //   window.devToolsExtension ? window.devToolsExtension() : f => f
+  // )
+
+  // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 export default store;

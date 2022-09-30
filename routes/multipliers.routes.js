@@ -8,6 +8,8 @@ const MultipliersController = require('../controllers/multipliers.controller');
 router.get('/multipliers', MultipliersController.getAll);
 router.get('/multipliers/:id', MultipliersController.getId);
 
+
+
 // router.post('/multiplier', MultiplierController.postNew);
 // router.put('/multiplier/:id', MultiplierController.putId);
 // router.delete('/multiplier/:id', MultiplierController.deleteId);

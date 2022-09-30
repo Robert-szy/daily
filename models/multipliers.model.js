@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const multipliersSchema = new mongoose.Schema({
+const multiplierSchema = new mongoose.Schema({
   id: {type: String, required: true},
   sugarMultiply: { type: String, required: true },
   fatMultiply: { type: String, required: true },
@@ -20,4 +20,4 @@ const multipliersSchema = new mongoose.Schema({
   agarWinterMultiply: { type: String, required: true},
 });
 
-module.exports = mongoose.model('Multipliers', multipliersSchema);
+module.exports = mongoose.model('Multiplier', multiplierSchema);

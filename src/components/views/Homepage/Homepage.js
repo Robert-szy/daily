@@ -42,7 +42,7 @@ class Homepage extends React.Component {
           <div className={styles.homePage}>
             <div className={styles.mainBlock}>
 
-              {order = orders[orders.length-1],
+              {/* {order = orders[orders.length-1],
               date = order.data,
               <OrderBox {...order} {...pots}/>
               }
@@ -53,7 +53,7 @@ class Homepage extends React.Component {
                 }),
 
                 <PortionBox {...portion}/>
-              }
+              } */}
             </div>
           </div>
         </div>
