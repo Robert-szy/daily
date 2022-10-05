@@ -7,15 +7,16 @@ class MultipliersPage extends React.Component {
     activePage: 0,
     editable: 'no',
     activePageStyle: styles.fadeIn,
-    multipliers: this.props.multipliers,
   };
+
+  componentDidMount(){
+    this.props.fetchMultipliersFromAPI();
+  }
 
   render() {
     const {
       multipliers,
     } = this.props;
-
-    console.log('multipliers wmultiplierspage', multipliers);
 
     return (
       <div className={styles.root}>
@@ -32,19 +33,21 @@ class MultipliersPage extends React.Component {
               </tr>
             </thead>
             <tbody>
-              {multipliers.map(item => (
-                <tr key={item.id}>
-                  {/* <Link */}
-                  <th scope='row'>
-                    <p className={styles.header}>{item.multiplierName}</p>
-                  </th>
-                  <td>
-                    <p className={styles.data}>{item.multiplierValue}</p>
-                  </td>
-                  {/* </Link> */}
-                </tr>
+              {
+                multipliers.map(item => (
+                  <tr key={item.id}>
+                    {/* <Link */}
+                    <th scope='row'>
+                      <p className={styles.header}>{item.multiplierName}</p>
+                    </th>
+                    <td>
+                      <p className={styles.data}>{item.multiplierValue}</p>
+                    </td>
+                    {/* </Link> */}
+                  </tr>
 
-              ))}
+                ))
+              }
             </tbody>
           </table>
           {/* </ul> */}
@@ -55,20 +58,24 @@ class MultipliersPage extends React.Component {
 }
 
 MultipliersPage.propTypes = {
-  multipliers: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      multiplierName: PropTypes.string,
-      multiplierValue: PropTypes.number,
-    }),
-  ),
+  // multipliers: PropTypes.arrayOf(
+  //   PropTypes.shape({
+  //     // id: PropTypes.string,
+  //     // multiplierName: PropTypes.string,
+  //     // multiplierValue: PropTypes.number,
+  //   }),
+  // ),
+  multipliers: PropTypes.arrayOf,
+  fetchMultipliersFromAPI: PropTypes.func,
+
   // setScreenType: PropTypes.func,
   // maxProductsOnPage: PropTypes.number,
   // addToCart: PropTypes.func,
 };
 
 MultipliersPage.defaultProps = {
-  multipliers: [],
+  // multipliers: [],
+
 };
 
 export default MultipliersPage;

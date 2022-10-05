@@ -1,20 +1,18 @@
-const Multipliers = require('../models/multipliers.model');
+const Multiplier = require('../models/multiplier.model');
 
 exports.getAll = async (req, res) => {
   try {
-    const multipliers = await Multipliers.find();
+    const multipliers = await Multiplier.find();
 
-    // res.render('MultipliersPage', { title: 'Local Library Home', error: err, data: results });
-
-    // res.send('NOT IMPLEMENTED: Author list');
-    res.json({multiplier: multipliers});
+    // res.json({multipliers: multipliers});
+    res.json({multipliers});
     console.log('multipliersuuu', multipliers);
 
 
-    Multipliers.find((err, multipliers) => {
-      if (err) return res.json({ success: false, error: err });
-      return res.json({ success: true, data: multipliers });
-    });
+    // Multiplier.find((err, multipliers) => {
+    //   if (err) return res.json({ success: false, error: err });
+    //   return res.json({ success: true, data: multipliers });
+    // });
 
   }
   catch(err) {
@@ -35,7 +33,7 @@ exports.getAll = async (req, res) => {
 
 exports.getId = async (req, res) => {
   try {
-    const con = await Multipliers.findById(req.params.id);
+    const con = await Multiplier.findById(req.params.id);
     if(!con) res.status(404).json({ message: 'Not found' });
     else res.json(con);
     // const con = await Multipliers.find({'id': 'winterMultiplierss'});

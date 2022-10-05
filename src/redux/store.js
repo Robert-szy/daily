@@ -1,7 +1,7 @@
-import { combineReducers, createStore, compose } from 'redux';
+import { combineReducers, createStore, compose, applyMiddleware } from 'redux';
 import initialStore from './initialStoreData';
-// import thunk from 'redux-thunk';
-// import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 
 import multipliersReducer from './multipliersRedux';
@@ -45,9 +45,16 @@ Object.keys(initialState).forEach(item => {
 // merge all reducers
 const storeReducer = combineReducers(reducers);
 
+// const enhancers = compose(
+//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+// );
+
+const middleware = [thunk];
+
 const enhancers = compose(
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  composeWithDevTools(applyMiddleware(...middleware))
 );
+
 
 // create store
 const store = createStore(

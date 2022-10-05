@@ -12,86 +12,86 @@ const categories = [
 const screenType = SIZE_TYPES.DESKTOP;
 
 const multipliers = [
-  {
-    id: 'sugarMultiply',
-    multiplierName: 'Cukier',
-    multiplierValue: 0.9,
-  },
-  {
-    id: 'fatMultiply',
-    multiplierName: 'Tłuszcz',
-    multiplierValue: 0.05,
-  },
-  {
-    id: 'acidMultiply',
-    multiplierName: 'Kwasek',
-    multiplierValue: 0.02,
-  },
-  {
-    id: 'jellyProteinMultiply',
-    multiplierName: 'Białko w galarecie',
-    multiplierValue: 0.58,
-  },
-  {
-    id: 'foamProteinMultiply',
-    multiplierName: 'Białko w piance',
-    multiplierValue: 0.65,
-  },
-  {
-    id: 'syrupMultiply',
-    multiplierName: 'Syrop',
-    multiplierValue: 0.43,
-  },
-  {
-    id: 'agarSummerMultiply',
-    multiplierName: 'Agar letni',
-    multiplierValue: 0.017,
-  },
-  {
-    id: 'agarWinterMultiply',
-    multiplierName: 'Agar zimowy',
-    multiplierValue: 0.014,
-  },
-  {
-    id: 'waterMultiply',
-    multiplierName: 'Woda',
-    multiplierValue: 0.55,
-  },
-  {
-    id: 'appleMultiply',
-    multiplierName: 'Aromat jabłkowy',
-    multiplierValue: 0.003,
-  },
-  {
-    id: 'lemonMultiply',
-    multiplierName: 'Aromat cytrynowy',
-    multiplierValue: 0.0013,
-  },
-  {
-    id: 'orangeMultiply',
-    multiplierName: 'Aromat pomarańczowy',
-    multiplierValue: 0.004,
-  },
-  {
-    id: 'raspberryMultiply',
-    multiplierName: 'Aromat malinowy',
-    multiplierValue: 0.004,
-  },
-  {
-    id: 'cherryMultiply',
-    multiplierName: 'Aromat wiśniowy',
-    multiplierValue: 0.002,
-  },
-  {
-    id: 'vanillaMultiply',
-    multiplierName: 'Aromat waniliowy',
-    multiplierValue: 0.75,
-  },
-  {
-    id: 'kiwiMultiply',
-    multiplierName: 'Aromat kiwi',
-    multiplierValue: 0.005,
-  },
+  // {
+  //   id: 'sugarMultiply',
+  //   multiplierName: 'Cukier',
+  //   multiplierValue: 0.9,
+  // },
+  // {
+  //   id: 'fatMultiply',
+  //   multiplierName: 'Tłuszcz',
+  //   multiplierValue: 0.05,
+  // },
+  // {
+  //   id: 'acidMultiply',
+  //   multiplierName: 'Kwasek',
+  //   multiplierValue: 0.02,
+  // },
+  // {
+  //   id: 'jellyProteinMultiply',
+  //   multiplierName: 'Białko w galarecie',
+  //   multiplierValue: 0.58,
+  // },
+  // {
+  //   id: 'foamProteinMultiply',
+  //   multiplierName: 'Białko w piance',
+  //   multiplierValue: 0.65,
+  // },
+  // {
+  //   id: 'syrupMultiply',
+  //   multiplierName: 'Syrop',
+  //   multiplierValue: 0.43,
+  // },
+  // {
+  //   id: 'agarSummerMultiply',
+  //   multiplierName: 'Agar letni',
+  //   multiplierValue: 0.017,
+  // },
+  // {
+  //   id: 'agarWinterMultiply',
+  //   multiplierName: 'Agar zimowy',
+  //   multiplierValue: 0.014,
+  // },
+  // {
+  //   id: 'waterMultiply',
+  //   multiplierName: 'Woda',
+  //   multiplierValue: 0.55,
+  // },
+  // {
+  //   id: 'appleMultiply',
+  //   multiplierName: 'Aromat jabłkowy',
+  //   multiplierValue: 0.003,
+  // },
+  // {
+  //   id: 'lemonMultiply',
+  //   multiplierName: 'Aromat cytrynowy',
+  //   multiplierValue: 0.0013,
+  // },
+  // {
+  //   id: 'orangeMultiply',
+  //   multiplierName: 'Aromat pomarańczowy',
+  //   multiplierValue: 0.004,
+  // },
+  // {
+  //   id: 'raspberryMultiply',
+  //   multiplierName: 'Aromat malinowy',
+  //   multiplierValue: 0.004,
+  // },
+  // {
+  //   id: 'cherryMultiply',
+  //   multiplierName: 'Aromat wiśniowy',
+  //   multiplierValue: 0.002,
+  // },
+  // {
+  //   id: 'vanillaMultiply',
+  //   multiplierName: 'Aromat waniliowy',
+  //   multiplierValue: 0.75,
+  // },
+  // {
+  //   id: 'kiwiMultiply',
+  //   multiplierName: 'Aromat kiwi',
+  //   multiplierValue: 0.005,
+  // },
 ];
 
 const pots = [

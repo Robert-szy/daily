@@ -108,11 +108,11 @@ class ConfigPage extends React.Component {
     //   maxOrdersOnPage,
     // );
 
-    console.log('screenType', screenType);
-    console.log('ordersPerPage[screenType]', ordersPerPage[screenType]);
-    console.log('this.props', this.props);
-    console.log('this.state', this.state);
-    console.log('categories w configpage', categories);
+    // console.log('screenType', screenType);
+    // console.log('ordersPerPage[screenType]', ordersPerPage[screenType]);
+    // console.log('this.props', this.props);
+    // console.log('this.state', this.state);
+    // console.log('categories w configpage', categories);
 
 
     // const pagesCount = Math.ceil(orders.length / actualOrdersOnPage);
