@@ -1,6 +1,5 @@
 import { SIZE_TYPES } from '../screenSettings';
 
-// const initialState = {
 
 const categories = [
   { id: '/multipliers', name: 'Mnożniki' },
