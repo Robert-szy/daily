@@ -75,6 +75,7 @@ class ConfigPage extends React.Component {
   };
 
   componentDidMount() {
+    this.props.fetchCategoriesFromAPI();
     this.handleSizeChange(this.props.screenType);
     window.addEventListener('resize', () =>
       this.handleSizeChange(this.props.screenType)
@@ -89,7 +90,7 @@ class ConfigPage extends React.Component {
 
   render() {
     const {
-      orders,
+      // orders,
       categories,
       screenType,
       // maxOrdersOnPage,
@@ -107,12 +108,6 @@ class ConfigPage extends React.Component {
     //   ordersPerPage[screenType],
     //   maxOrdersOnPage,
     // );
-
-    // console.log('screenType', screenType);
-    // console.log('ordersPerPage[screenType]', ordersPerPage[screenType]);
-    // console.log('this.props', this.props);
-    // console.log('this.state', this.state);
-    // console.log('categories w configpage', categories);
 
 
     // const pagesCount = Math.ceil(orders.length / actualOrdersOnPage);
@@ -260,41 +255,15 @@ class ConfigPage extends React.Component {
 
 ConfigPage.propTypes = {
   screenType: PropTypes.string,
-  children: PropTypes.node,
-  categories: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      name: PropTypes.string,
-    })
-  ),
-  orders: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      B1: PropTypes.number,
-      B2: PropTypes.number,
-      Danusia: PropTypes.number,
-      Slomka: PropTypes.number,
-      Kostka: PropTypes.number,
-      Weronki: PropTypes.number,
-      Babeczki: PropTypes.number,
-      Kolor: PropTypes.number,
-      Pianka: PropTypes.number,
-      BC: PropTypes.number,
-      BJ: PropTypes.number,
-      BCM: PropTypes.number,
-      BJM: PropTypes.number,
-    }),
-  ),
+  categories: PropTypes.array,
+  fetchCategoriesFromAPI: PropTypes.func,
   setScreenType: PropTypes.func,
   // maxOrdersOnPage: PropTypes.number,
 
 };
 
 ConfigPage.defaultProps = {
-  // orders: [],
-  // categories: [],
-  // maxOrdersOnPage: 8,
-  // maxOrdersDisplay: 32,
+  categories: [],
 };
 
 export default ConfigPage;

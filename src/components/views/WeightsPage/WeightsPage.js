@@ -98,20 +98,10 @@ class WeightsPage extends React.Component {
 }
 
 WeightsPage.propTypes = {
-  // weights: PropTypes.arrayOf(
-  //   PropTypes.shape({
-  //     id: PropTypes.string,
-  //     weightName: PropTypes.string,
-  //     weightValue: PropTypes.number,
-  //     weightLayers: PropTypes.array,
-  //   }),
-  // ),
   weights: PropTypes.array,
   fetchWeightsFromAPI: PropTypes.func,
 
   // setScreenType: PropTypes.func,
-  // maxProductsOnPage: PropTypes.number,
-  // addToCart: PropTypes.func,
 };
 
 WeightsPage.defaultProps = {

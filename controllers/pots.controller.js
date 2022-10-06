@@ -3,9 +3,7 @@ const Pot = require('../models/pot.model');
 exports.getAll = async (req, res) => {
   try {
     const pots = await Pot.find();
-
     res.json({pots});
-    console.log('potsuuu', pots);
   }
   catch(err) {
     res.status(500).json({ message: err });

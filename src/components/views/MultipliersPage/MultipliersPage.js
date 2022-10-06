@@ -58,19 +58,10 @@ class MultipliersPage extends React.Component {
 }
 
 MultipliersPage.propTypes = {
-  // multipliers: PropTypes.arrayOf(
-  //   PropTypes.shape({
-  //     // id: PropTypes.string,
-  //     // multiplierName: PropTypes.string,
-  //     // multiplierValue: PropTypes.number,
-  //   }),
-  // ),
   multipliers: PropTypes.array,
   fetchMultipliersFromAPI: PropTypes.func,
 
   // setScreenType: PropTypes.func,
-  // maxProductsOnPage: PropTypes.number,
-  // addToCart: PropTypes.func,
 };
 
 MultipliersPage.defaultProps = {

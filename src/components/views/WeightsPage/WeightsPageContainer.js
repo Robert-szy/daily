@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import WeightsPage from './WeightsPage';
 
-import { fetchWeights, getAllWeights } from '../../../redux/weightsRedux.js';
+import { fetchWeights } from '../../../redux/weightsRedux.js';
 import { getScreenType, setScreenType } from '../../../redux/screenTypeRedux';
 
 const mapStateToProps = state => ({

@@ -2,10 +2,9 @@ import { SIZE_TYPES } from '../screenSettings';
 
 
 const categories = [
-  { id: '/multipliers', name: 'Mnożniki' },
-  { id: '/weights', name: 'Współczynniki' },
-  { id: '/pots', name: 'Garnki' },
-
+  // { id: '/multipliers', name: 'Mnożniki' },
+  // { id: '/weights', name: 'Współczynniki' },
+  // { id: '/pots', name: 'Garnki' },
 ];
 
 const screenType = SIZE_TYPES.DESKTOP;

@@ -2,11 +2,10 @@ import { connect } from 'react-redux';
 
 import PotsPage from './PotsPage';
 
-import { fetchPots, getAllPots } from '../../../redux/potsRedux.js';
+import { fetchPots } from '../../../redux/potsRedux.js';
 import { getScreenType, setScreenType } from '../../../redux/screenTypeRedux';
 
 const mapStateToProps = state => ({
-  // pots: getAllPots(state),
   pots: state.pots.pots,
   screenType: getScreenType(state),
 });

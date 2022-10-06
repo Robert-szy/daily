@@ -69,18 +69,10 @@ class PotsPage extends React.Component {
 }
 
 PotsPage.propTypes = {
-  // pots: PropTypes.arrayOf(
-  //   PropTypes.shape({
-  //     id: PropTypes.string,
-  //     potsName: PropTypes.string,
-  //     potsValue: PropTypes.number,
-  //   }),
-  // ),
   pots: PropTypes.array,
   fetchPotsFromAPI: PropTypes.func,
 
   // setScreenType: PropTypes.func,
-  // maxProductsOnPage: PropTypes.number,
 };
 
 PotsPage.defaultProps = {

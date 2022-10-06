@@ -3,9 +3,7 @@ const Weight = require('../models/weight.model');
 exports.getAll = async (req, res) => {
   try {
     const weights = await Weight.find();
-
     res.json({weights});
-    console.log('weightsuuu', weights);
   }
   catch(err) {
     res.status(500).json({ message: err });
