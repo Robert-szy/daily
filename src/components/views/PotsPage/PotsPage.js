@@ -2,21 +2,23 @@ import React from 'react';
 import styles from './PotsPage.module.scss';
 import PropTypes from 'prop-types';
 
-
 class PotsPage extends React.Component {
   state = {
     activePage: 0,
     editable: 'no',
     activePageStyle: styles.fadeIn,
-    pots: this.props.pots,
-
   };
+
+  componentDidMount(){
+    this.props.fetchPotsFromAPI();
+  }
 
   render() {
     const {
       pots,
     } = this.props;
     console.log('pots w potspage', pots);
+
     return (
       <div className={styles.root}>
         <div className='container'>
@@ -67,13 +69,16 @@ class PotsPage extends React.Component {
 }
 
 PotsPage.propTypes = {
-  pots: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      potsName: PropTypes.string,
-      potsValue: PropTypes.number,
-    }),
-  ),
+  // pots: PropTypes.arrayOf(
+  //   PropTypes.shape({
+  //     id: PropTypes.string,
+  //     potsName: PropTypes.string,
+  //     potsValue: PropTypes.number,
+  //   }),
+  // ),
+  pots: PropTypes.array,
+  fetchPotsFromAPI: PropTypes.func,
+
   // setScreenType: PropTypes.func,
   // maxProductsOnPage: PropTypes.number,
 };

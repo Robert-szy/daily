@@ -65,7 +65,7 @@ MultipliersPage.propTypes = {
   //     // multiplierValue: PropTypes.number,
   //   }),
   // ),
-  multipliers: PropTypes.arrayOf,
+  multipliers: PropTypes.array,
   fetchMultipliersFromAPI: PropTypes.func,
 
   // setScreenType: PropTypes.func,
@@ -74,7 +74,7 @@ MultipliersPage.propTypes = {
 };
 
 MultipliersPage.defaultProps = {
-  // multipliers: [],
+  multipliers: [],
 
 };
 

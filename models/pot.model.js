@@ -1,12 +1,13 @@
 const mongoose = require('mongoose');
 
 const potsSchema = new mongoose.Schema({
+  id: {type: String, required: true},
   smallPot: { type: String, required: true },
   mediumPot: { type: String, required: true },
   bigPot: { type: String, required: true },
   doubleSmallPot: { type: String, required: true },
-  // doubleMediumPot: { type: String, required: true },
-  // doubleBigigPot: { type: String, required: true },
+  doubleMediumPot: { type: String, required: true },
+  doubleBigPot: { type: String, required: true },
 
 });
 

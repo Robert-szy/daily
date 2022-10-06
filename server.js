@@ -5,8 +5,8 @@ const path = require('path');
 const connectToDB = require('./db');
 
 // const ordersRoutes = require('./routes/orders.routes');
-// const potsRoutes = require('./routes/pots.routes');
-// const weightsRoutes = require('./routes/weights.routes');
+const potsRoutes = require('./routes/pots.routes');
+const weightsRoutes = require('./routes/weights.routes');
 const multipliersRoutes = require('./routes/multipliers.routes');
 
 
@@ -24,8 +24,8 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 // add dailyProduction routes
 // app.use('/api', ordersRoutes);
-// app.use('/api', potsRoutes);
-// app.use('/api', weightsRoutes);
+app.use('/api', potsRoutes);
+app.use('/api', weightsRoutes);
 app.use('/api', multipliersRoutes);
 
 app.use((req, res) => {

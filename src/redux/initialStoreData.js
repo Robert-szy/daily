@@ -94,107 +94,107 @@ const multipliers = [
 ];
 
 const pots = [
-  {
-    id: 'smallPot',
-    potName: 'Mały',
-    potValue: 22,
+  // {
+  //   id: 'smallPot',
+  //   potName: 'Mały',
+  //   potValue: 22,
 
-  },
-  {
-    id: 'mediumPot',
-    potName: 'Średni',
-    potValue: 30,
-  },
-  {
-    id: 'bigPot',
-    potName: 'Duży',
-    potValue: 38,
-  },
-  {
-    id: 'doubleSmallPot',
-    potName: 'Podwójny mały',
-    potValue: 42,
-  },
+  // },
+  // {
+  //   id: 'mediumPot',
+  //   potName: 'Średni',
+  //   potValue: 30,
+  // },
+  // {
+  //   id: 'bigPot',
+  //   potName: 'Duży',
+  //   potValue: 38,
+  // },
+  // {
+  //   id: 'doubleSmallPot',
+  //   potName: 'Podwójny mały',
+  //   potValue: 42,
+  // },
 ];
 
 const weights = [
-  {
-    id: 'babeczki',
-    weightName: 'Babeczki',
-    weightValue: 1,
-    weightUnit: 'blach',
-    weightLayers: [0, 0, 4, 4, 0],
-  },
-  {
-    id: 'b1',
-    weightName: 'B1',
-    weightValue: 56,
-    weightUnit: 'sztuk',
-    weightLayers: [10, 4.5, 12, 4.5, 14],
-  },
-  {
-    id: 'b2',
-    weightName: 'B2',
-    weightValue: 30,
-    weightUnit: 'sztuk',
-    weightLayers: [8, 3.7, 10, 3.7, 12],
-  },
-  {
-    id: 'danusia',
-    weightName: 'Danusia',
-    weightValue: 5,
-    weightUnit: 'blach',
-    weightLayers: [6.5, 3, 6.5, 3, 6.5],
-  },
-  {
-    id: 'kosteczka',
-    weightName: 'Kosteczka',
-    weightValue: 2,
-    weightUnit: 'blach',
-    weightLayers: [2, 1.5, 4, 1.5, 2],
-  },
-  {
-    id: 'mini',
-    weightName: 'Mini',
-    weightValue: 1,
-    weightUnit: 'blach',
-    weightLayers: [3.5, 2.5, 8.5, 0, 0],
-  },
-  {
-    id: 'owocowa',
-    weightName: 'Owocowa',
-    weightValue: 1,
-    weightUnit: 'blach',
-    weightLayers: [0, 0, 10, 0, 0],
-  },
-  {
-    id: 'pianka',
-    weightName: 'Pianka',
-    weightValue: 1,
-    weightUnit: 'blach',
-    weightLayers: [10, 12, 0, 0, 0],
-  },
-  {
-    id: 'slomka',
-    weightName: 'Słomka',
-    weightValue: 6,
-    weightUnit: 'blach',
-    weightLayers: [4.5, 2.5, 4.5, 1.3, 4.5],
-  },
-  {
-    id: 'weronki',
-    weightName: 'Weronki',
-    weightValue: 1,
-    weightUnit: 'partia',
-    weightLayers: [4, 3, 10, 0, 0],
-  },
-  {
-    id: 'zwijana',
-    weightName: 'Zwijana',
-    weightValue: 1,
-    weightUnit: 'blach',
-    weightLayers: [1, 1, 0, 0, 0],
-  },
+  // {
+  //   id: 'babeczki',
+  //   weightName: 'Babeczki',
+  //   weightValue: 1,
+  //   weightUnit: 'blach',
+  //   weightLayers: [0, 0, 4, 4, 0],
+  // },
+  // {
+  //   id: 'b1',
+  //   weightName: 'B1',
+  //   weightValue: 56,
+  //   weightUnit: 'sztuk',
+  //   weightLayers: [10, 4.5, 12, 4.5, 14],
+  // },
+  // {
+  //   id: 'b2',
+  //   weightName: 'B2',
+  //   weightValue: 30,
+  //   weightUnit: 'sztuk',
+  //   weightLayers: [8, 3.7, 10, 3.7, 12],
+  // },
+  // {
+  //   id: 'danusia',
+  //   weightName: 'Danusia',
+  //   weightValue: 5,
+  //   weightUnit: 'blach',
+  //   weightLayers: [6.5, 3, 6.5, 3, 6.5],
+  // },
+  // {
+  //   id: 'kosteczka',
+  //   weightName: 'Kosteczka',
+  //   weightValue: 2,
+  //   weightUnit: 'blach',
+  //   weightLayers: [2, 1.5, 4, 1.5, 2],
+  // },
+  // {
+  //   id: 'mini',
+  //   weightName: 'Mini',
+  //   weightValue: 1,
+  //   weightUnit: 'blach',
+  //   weightLayers: [3.5, 2.5, 8.5, 0, 0],
+  // },
+  // {
+  //   id: 'owocowa',
+  //   weightName: 'Owocowa',
+  //   weightValue: 1,
+  //   weightUnit: 'blach',
+  //   weightLayers: [0, 0, 10, 0, 0],
+  // },
+  // {
+  //   id: 'pianka',
+  //   weightName: 'Pianka',
+  //   weightValue: 1,
+  //   weightUnit: 'blach',
+  //   weightLayers: [10, 12, 0, 0, 0],
+  // },
+  // {
+  //   id: 'slomka',
+  //   weightName: 'Słomka',
+  //   weightValue: 6,
+  //   weightUnit: 'blach',
+  //   weightLayers: [4.5, 2.5, 4.5, 1.3, 4.5],
+  // },
+  // {
+  //   id: 'weronki',
+  //   weightName: 'Weronki',
+  //   weightValue: 1,
+  //   weightUnit: 'partia',
+  //   weightLayers: [4, 3, 10, 0, 0],
+  // },
+  // {
+  //   id: 'zwijana',
+  //   weightName: 'Zwijana',
+  //   weightValue: 1,
+  //   weightUnit: 'blach',
+  //   weightLayers: [1, 1, 0, 0, 0],
+  // },
 ];
 
 const orders = [

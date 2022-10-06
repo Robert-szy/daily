@@ -11,16 +11,15 @@ class WeightsPage extends React.Component {
     activePage: 0,
     editable: 'no',
     activePageStyle: styles.fadeIn,
-    weights: this.props.weights,
-
   };
+
+  componentDidMount(){
+    this.props.fetchWeightsFromAPI();
+  }
 
   render() {
     const {
       weights,
-      // products,
-      // maxProductsOnPage,
-      // screenType,
     } = this.props;
 
     return (
@@ -99,14 +98,17 @@ class WeightsPage extends React.Component {
 }
 
 WeightsPage.propTypes = {
-  weights: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      weightName: PropTypes.string,
-      weightValue: PropTypes.number,
-      weightLayers: PropTypes.array,
-    }),
-  ),
+  // weights: PropTypes.arrayOf(
+  //   PropTypes.shape({
+  //     id: PropTypes.string,
+  //     weightName: PropTypes.string,
+  //     weightValue: PropTypes.number,
+  //     weightLayers: PropTypes.array,
+  //   }),
+  // ),
+  weights: PropTypes.array,
+  fetchWeightsFromAPI: PropTypes.func,
+
   // setScreenType: PropTypes.func,
   // maxProductsOnPage: PropTypes.number,
   // addToCart: PropTypes.func,
