@@ -17,7 +17,6 @@ class PotsPage extends React.Component {
     const {
       pots,
     } = this.props;
-    console.log('pots w potspage', pots);
 
     return (
       <div className={styles.root}>

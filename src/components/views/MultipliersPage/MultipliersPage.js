@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './MultipliersPage.module.scss';
 import PropTypes from 'prop-types';
+import Button from '../../common/Button/Button';
 
 class MultipliersPage extends React.Component {
   state = {
@@ -11,6 +12,12 @@ class MultipliersPage extends React.Component {
 
   componentDidMount(){
     this.props.fetchMultipliersFromAPI();
+  }
+
+  handleMultiplierChange(id, newValue) {
+    console.log('id', id);
+    console.log('newValue', newValue);
+    this.props.changeMultiplierInDB({ id, multiplierValue: newValue });
   }
 
   render() {
@@ -41,7 +48,14 @@ class MultipliersPage extends React.Component {
                       <p className={styles.header}>{item.multiplierName}</p>
                     </th>
                     <td>
-                      <p className={styles.data}>{item.multiplierValue}</p>
+                      <div className={styles.data}>
+                        <input id={item._id} defaultValue={item.multiplierValue} ></input>
+                      </div>
+                    </td>
+                    <td>
+                      <Button className={styles.button1} variant='outline' onClick={() => this.handleMultiplierChange(item._id, document.getElementById(item._id).value)}>
+                        ZMIEŃ
+                      </Button>
                     </td>
                     {/* </Link> */}
                   </tr>
@@ -60,7 +74,7 @@ class MultipliersPage extends React.Component {
 MultipliersPage.propTypes = {
   multipliers: PropTypes.array,
   fetchMultipliersFromAPI: PropTypes.func,
-
+  changeMultiplierInDB: PropTypes.func,
   // setScreenType: PropTypes.func,
 };
 

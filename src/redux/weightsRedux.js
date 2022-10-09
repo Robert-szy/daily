@@ -32,7 +32,6 @@ export const fetchWeights = () => {
       .get('http://localhost:8000/api/weights')
       .then(res => {
         dispatch(fetchWeightsFromAPI(res.data.weights));
-        console.log('res.data', res.data.weights);
       })
       .catch(err => {
         dispatch(fetchWeightsError(err.message || true));

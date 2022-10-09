@@ -33,7 +33,6 @@ class ConfigPage extends React.Component {
   // }
 
   handleCategoryChange(newCategory) {
-    console.log('itemID', newCategory);
     switch (newCategory) {
       case '/multipliers':
         this.setState({isMultipliers: true, isPots: false, isWeights: false});

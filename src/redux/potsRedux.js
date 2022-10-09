@@ -32,7 +32,6 @@ export const fetchPots = () => {
       .get('http://localhost:8000/api/pots')
       .then(res => {
         dispatch(fetchPotsFromAPI(res.data.pots));
-        console.log('res.data', res.data.pots);
       })
       .catch(err => {
         dispatch(fetchPotsError(err.message || true));

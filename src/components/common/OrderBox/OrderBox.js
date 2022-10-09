@@ -40,8 +40,6 @@ const OrderBox = ({
   const sumaP5 = b1[5]+b2[5]+danusia[5]+slomka[5]+kostka[5]+weronki[5]+mini[5]+babeczki[5]+kolor[5]+pianka[5];
   const sumaP6 = b1[6]+b2[6]+danusia[6]+slomka[6]+kostka[6]+weronki[6]+mini[6]+babeczki[6]+kolor[6]+pianka[6];
 
-  console.log('weights in orderbox', pots);
-
   return (
     <div className={styles.root}>
       <div className = {styles.ordersBorder}>

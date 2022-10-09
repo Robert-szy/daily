@@ -11,7 +11,7 @@ router.get('/multipliers/:id', MultipliersController.getId);
 
 
 // router.post('/multiplier', MultiplierController.postNew);
-// router.put('/multiplier/:id', MultiplierController.putId);
-// router.delete('/multiplier/:id', MultiplierController.deleteId);
+router.put('/multipliers/:id', MultipliersController.putId);
+// router.delete('/multiplier/id', MultiplierController.deleteId);
 
 module.exports = router;

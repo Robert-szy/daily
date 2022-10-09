@@ -32,7 +32,6 @@ export const fetchCategories = () => {
       .get('http://localhost:8000/api/categories')
       .then(res => {
         dispatch(fetchCategoriesFromAPI(res.data.categories));
-        console.log('res.data', res.data.categories);
       })
       .catch(err => {
         dispatch(fetchCategoriesError(err.message || true));
