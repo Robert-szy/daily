@@ -14,7 +14,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   setScreenType: payload => dispatch(setScreenType(payload)),
   fetchMultipliersFromAPI: () => dispatch(fetchMultipliers()),
-  changeMultiplierInDB: payload =>dispatch(changeMultiplier(payload)),
+  changeMultiplierInDB: payload => dispatch(changeMultiplier(payload)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MultipliersPage);

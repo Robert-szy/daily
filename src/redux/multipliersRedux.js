@@ -18,7 +18,7 @@ export const FETCH_SUCCESS = createActionName('FETCH_SUCCESS');
 export const FETCH_MULTIPLIERS_ERROR = createActionName('FETCH_MULTIPLIERS_ERROR');
 
 // action creators
-export const changeMultiplierInDB = payload => ({ payload: { ...payload }, type: CHANGE_MULTIPLIER_IN_DB });
+export const changeMultiplierInDB = payload => ({payload, type: CHANGE_MULTIPLIER_IN_DB });
 export const changeMultiplierError = payload => ({ payload, type: CHANGE_MULTIPLIER_ERROR });
 
 export const fetchMultipliersFromAPI = payload => ({ payload, type: FETCH_MULTIPLIERS_FROM_API });
@@ -28,7 +28,7 @@ export const fetchMultipliersError = payload => ({ payload, type: FETCH_MULTIPLI
 
 /* thunk creators */
 export const fetchMultipliers = () => {
-  return (dispatch, getState) => {
+  return (dispatch) => {
     dispatch(fetchStarted());
     Axios
       .get('http://localhost:8000/api/multipliers')
@@ -42,17 +42,19 @@ export const fetchMultipliers = () => {
 };
 
 export const changeMultiplier = (data) => {
-  return (dispatch, setState) => {
+  return (dispatch) => {
+    console.log('data w changeMultipier', data);
+
     console.log('id w changeMultipier', data.id);
     console.log(`http://localhost:8000/api/multipliers/${data.id}`);
-    console.log('multiVal w changeMultipier', data.multiplierValue);
+    console.log('multiVal w changeMultipier', data.newMultiplierValue);
 
 
     // dispatch(fetchStarted());
     Axios
-      .put(`http://localhost:8000/api/multipliers/${data.id}`, {multiplierValue: data.multiplierValue})
+      .put(`http://localhost:8000/api/multipliers/${data.id}`, {multiplierValue: data.newMultiplierValue})
       .then(res => {
-        dispatch(changeMultiplierInDB(res.data.id, res.data.multiplierVvalue));
+        dispatch(changeMultiplierInDB(data));
       })
       .catch(err => {
         dispatch(changeMultiplierError(err.message || true));
@@ -63,8 +65,22 @@ export const changeMultiplier = (data) => {
 /* reducer */
 export default function reducer(statePart = [], action = []) {
   switch (action.type) {
-    case CHANGE_MULTIPLIER_IN_DB:
-      return [...statePart, action.payload];
+    case CHANGE_MULTIPLIER_IN_DB: {
+      const { id, newMultiplierValue } = action.payload;
+
+      return {
+        ...statePart,
+        multipliers: statePart.multipliers.map(multipliers => {
+          if (multipliers._id !== id) {
+            return multipliers;
+          }
+          return {
+            ...multipliers,
+            multiplierValue: newMultiplierValue,
+          };
+        }),
+      };
+    }
     case CHANGE_MULTIPLIER_ERROR: {
       return {
         ...statePart,

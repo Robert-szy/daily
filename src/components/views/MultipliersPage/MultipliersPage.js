@@ -14,10 +14,8 @@ class MultipliersPage extends React.Component {
     this.props.fetchMultipliersFromAPI();
   }
 
-  handleMultiplierChange(id, newValue) {
-    console.log('id', id);
-    console.log('newValue', newValue);
-    this.props.changeMultiplierInDB({ id, multiplierValue: newValue });
+  handleMultiplierChange(id, newMultiplierValue) {
+    this.props.changeMultiplierInDB({ id, newMultiplierValue });
   }
 
   render() {
