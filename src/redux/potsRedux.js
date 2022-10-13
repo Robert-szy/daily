@@ -5,11 +5,13 @@ export const getAllPots = ({ pots }) => pots;
 export const getCountPots = ({ pots }) => pots.length;
 
 // action name creator
-const reducerName = 'pot';
+const reducerName = 'pots';
 const createActionName = name => `app/${reducerName}/${name}`;
 
 // action types
-export const CHANGE_POT = createActionName('CHANGE_POT');
+export const CHANGE_POT_IN_DB = createActionName('CHANGE_POT_IN_DB');
+export const CHANGE_POT_ERROR = createActionName('CHANGE_POT_ERROR');
+
 
 export const FETCH_POTS_FROM_API = createActionName('FETCH_POTS_FROM_API');
 export const FETCH_START = createActionName('FETCH_START');
@@ -17,7 +19,8 @@ export const FETCH_SUCCESS = createActionName('FETCH_SUCCESS');
 export const FETCH_POTS_ERROR = createActionName('FETCH_POTS_ERROR');
 
 // action creators
-export const createActionChangePot = payload => ({ payload: { ...payload }, type: CHANGE_POT });
+export const changePotInDB = payload => ({ payload: { ...payload }, type: CHANGE_POT_IN_DB });
+export const changePotError = payload => ({ payload: { ...payload }, type: CHANGE_POT_ERROR });
 
 export const fetchPotsFromAPI = payload => ({ payload, type: FETCH_POTS_FROM_API });
 export const fetchStarted = payload => ({ payload, type: FETCH_START });
@@ -26,7 +29,7 @@ export const fetchPotsError = payload => ({ payload, type: FETCH_POTS_ERROR });
 
 /* thunk creators */
 export const fetchPots = () => {
-  return (dispatch, getState) => {
+  return (dispatch) => {
     dispatch(fetchStarted());
     Axios
       .get('http://localhost:8000/api/pots')
@@ -39,12 +42,46 @@ export const fetchPots = () => {
   };
 };
 
+export const changePot = (data) => {
+  return (dispatch) => {
+    Axios
+      .put(`http://localhost:8000/api/pots/${data.id}`, {potValue: data.newPotValue})
+      .then(res => {
+        dispatch(changePotInDB(data));
+      })
+      .catch(err => {
+        dispatch(changePotError(err.message || true));
+      });
+  };
+};
 
 /* reducer */
 export default function reducer(statePart = [], action = []) {
   switch (action.type) {
-    case CHANGE_POT:
-      return [...statePart, action.payload];
+    case CHANGE_POT_IN_DB: {
+      const { id, newPotValue } = action.payload;
+      return {
+        ...statePart,
+        pots: statePart.pots.map(pots => {
+          if (pots._id !== id) {
+            return pots;
+          }
+          return {
+            ...pots,
+            potValue: newPotValue,
+          };
+        }),
+      };
+    }
+    case CHANGE_POT_ERROR: {
+      return {
+        ...statePart,
+        loading: {
+          active: false,
+          error: action.payload,
+        },
+      };
+    }
     case FETCH_POTS_FROM_API:
       return {
         pots: action.payload,

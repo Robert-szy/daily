@@ -11,7 +11,7 @@ router.get('/pots/:id', PotsController.getId);
 
 
 // router.post('/pots', PotsController.postNew);
-// router.put('/pots/:id', PotsController.putId);
+router.put('/pots/:id', PotsController.putId);
 // router.delete('/pots/:id', PotsController.deleteId);
 
 module.exports = router;

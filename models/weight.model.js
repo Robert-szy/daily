@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const weightsSchema = new mongoose.Schema({
+const weightSchema = new mongoose.Schema({
   id: {type: String, required: true},
   weightName: { type: String, required: true },
   weightValue: { type: String, required: true },
@@ -8,4 +8,4 @@ const weightsSchema = new mongoose.Schema({
   weightLayers: { type: Array, required: true},
 });
 
-module.exports = mongoose.model('Weights', weightsSchema);
+module.exports = mongoose.model('Weight', weightSchema);

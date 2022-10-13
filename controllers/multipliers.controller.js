@@ -22,10 +22,6 @@ exports.getId = async (req, res) => {
 };
 
 exports.putId = async (req, res) => {
-  console.log('req.params.id', req.params.id);
-  console.log('req.params.value', req.params.multiplierValue);
-  console.log('req.body', req.body);
-
   try {
     console.log('value', req.body.multiplierValue);
     const con = await Multiplier.updateOne({_id: req.params.id}, { $set: { multiplierValue: req.body.multiplierValue }});

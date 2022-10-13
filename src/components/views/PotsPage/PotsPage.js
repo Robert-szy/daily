@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './PotsPage.module.scss';
 import PropTypes from 'prop-types';
+import Button from '../../common/Button/Button';
+
 
 class PotsPage extends React.Component {
   state = {
@@ -11,6 +13,10 @@ class PotsPage extends React.Component {
 
   componentDidMount(){
     this.props.fetchPotsFromAPI();
+  }
+
+  handlePotChange(id, newPotValue) {
+    this.props.changePotInDB({ id, newPotValue });
   }
 
   render() {
@@ -46,10 +52,17 @@ class PotsPage extends React.Component {
                     <p className={styles.header}>{item.potName}</p>
                   </th>
                   <td>
-                    <p className={styles.data}>{item.potValue}</p>
+                    <div className={styles.data}>
+                      <input id={item._id} defaultValue={item.potValue} ></input>
+                    </div>
                   </td>
                   <td>
                     <p className={styles.data}>kg</p>
+                  </td>
+                  <td>
+                    <Button className={styles.button1} variant='outline' onClick={() => this.handlePotChange(item._id, document.getElementById(item._id).value)}>
+                      ZMIEŃ
+                    </Button>
                   </td>
                   {/* </Link> */}
                 </tr>
@@ -70,6 +83,7 @@ class PotsPage extends React.Component {
 PotsPage.propTypes = {
   pots: PropTypes.array,
   fetchPotsFromAPI: PropTypes.func,
+  changePotInDB: PropTypes.func,
 
   // setScreenType: PropTypes.func,
 };

@@ -20,3 +20,15 @@ exports.getId = async (req, res) => {
     res.status(500).json({ message: err });
   }
 };
+
+exports.putId = async (req, res) => {
+  try {
+    console.log('value', req.body.potValue);
+    const con = await Pot.updateOne({_id: req.params.id}, { $set: { potValue: req.body.potValue }});
+    if(!con) res.status(404).json({ message: 'Not found' });
+    else res.json(con);
+  }
+  catch(err) {
+    res.status(500).json({ message: err });
+  }
+};

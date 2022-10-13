@@ -11,7 +11,7 @@ router.get('/weights/:id', WeightsController.getId);
 
 
 // router.post('/weights', WeightsController.postNew);
-// router.put('/weights/:id', WeightsController.putId);
+router.put('/weights/:id', WeightsController.putId);
 // router.delete('/weights/:id', WeightsController.deleteId);
 
 module.exports = router;

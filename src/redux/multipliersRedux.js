@@ -43,14 +43,6 @@ export const fetchMultipliers = () => {
 
 export const changeMultiplier = (data) => {
   return (dispatch) => {
-    console.log('data w changeMultipier', data);
-
-    console.log('id w changeMultipier', data.id);
-    console.log(`http://localhost:8000/api/multipliers/${data.id}`);
-    console.log('multiVal w changeMultipier', data.newMultiplierValue);
-
-
-    // dispatch(fetchStarted());
     Axios
       .put(`http://localhost:8000/api/multipliers/${data.id}`, {multiplierValue: data.newMultiplierValue})
       .then(res => {
@@ -67,7 +59,6 @@ export default function reducer(statePart = [], action = []) {
   switch (action.type) {
     case CHANGE_MULTIPLIER_IN_DB: {
       const { id, newMultiplierValue } = action.payload;
-
       return {
         ...statePart,
         multipliers: statePart.multipliers.map(multipliers => {
