@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Swipeable from '../../common/Swipeable/Swipeable';
 import OrderBox from '../../common/OrderBox/OrderBox';
+// import PortionBox from '../../common/PortionBox/PortionBox';
 
 
 
@@ -43,6 +44,9 @@ class OrdersPage extends React.Component {
   };
 
   componentDidMount() {
+    this.props.fetchOrdersFromAPI();
+    this.props.fetchMultipliersFromAPI();
+
     this.handleSizeChange(this.props.screenType);
     window.addEventListener('resize', () =>
       this.handleSizeChange(this.props.screenType)
@@ -58,24 +62,27 @@ class OrdersPage extends React.Component {
   render() {
     const {
       orders,
-      // categories,
+      portions,
+      multipliers,
+      weights,
       screenType,
       maxOrdersOnPage,
       maxTotalDisplayedOrders,
     } = this.props;
 
-    console.log('orders w orders', orders);
+    console.log('multiliers w orders', multipliers);
 
     const { activePage, activePageStyle } = this.state;
 
-    const ordersPerPage = {
-      [SIZE_TYPES.MOBILE]: 2,
-      [SIZE_TYPES.TABLET]: 3,
-      [SIZE_TYPES.DESKTOP]: 6,
-    };
+    const ordersPerPage = 1;
+    // {
+    //   [SIZE_TYPES.MOBILE]: 2,
+    //   [SIZE_TYPES.TABLET]: 3,
+    //   [SIZE_TYPES.DESKTOP]: 6,
+    // };
 
     const actualOrdersOnPage = Math.min(
-      ordersPerPage[screenType],
+      ordersPerPage,
       maxOrdersOnPage,
     );
     // console.log('screenType', screenType);
@@ -107,25 +114,25 @@ class OrdersPage extends React.Component {
       }
     };
 
-    const dots = [];
-    for (let i = 0; i < pagesCount; i++) {
-      console.log('dots number', dots.length);
-      dots.push(
-        <li key={i}>
-          <Link
-            to='/#'
-            onClick={() => {
-              this.handlePageChange(i);
-            }}
-            className={i === activePage ? styles.active : ''}
-          >
-            page {i}
-          </Link>
-        </li>
-      );
-    }
-    console.log('pagesCount', pagesCount);
-    console.log('dots number', dots);
+    // const dots = [];
+    // for (let i = 0; i < pagesCount; i++) {
+    //   console.log('dots number', dots.length);
+    //   dots.push(
+    //     <li key={i}>
+    //       <Link
+    //         to='/#'
+    //         onClick={() => {
+    //           this.handlePageChange(i);
+    //         }}
+    //         className={i === activePage ? styles.active : ''}
+    //       >
+    //         page {i}
+    //       </Link>
+    //     </li>
+    //   );
+    // }
+    // console.log('pagesCount', pagesCount);
+    // console.log('dots number', dots);
 
     return (
       <Swipeable leftAction={leftAction} rightAction={rightAction}>
@@ -133,31 +140,31 @@ class OrdersPage extends React.Component {
         <div className={styles.root}>
           <div className='container'>
             <div className={styles.panelBar}>
-              <div className='row no-gutters align-items-end'>
-                {/* <div className={'col-auto col-md ' + styles.menu}>
-                  Aqq2
-                  <ul>
-                    {categories.map(item => (
-                      <li key={item.id}>
-                        <Link
-                          to='/#'
-                          className={
-                            item.id === activeCategory ? styles.active : undefined
-                          }
-                          onClick={() => {
-                            this.handleCategoryChange(item.id);
-                          }}
-                        >
-                          {item.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div> */}
-                <div className={'col-12 col-sm-auto ' + styles.dots}>
+              {/* <div className='row no-gutters align-items-end'> */}
+              {/* <div className={'col-auto col-md ' + styles.menu}>
+                Aqq2
+                <ul>
+                  {categories.map(item => (
+                    <li key={item.id}>
+                      <Link
+                        to='/#'
+                        className={
+                          item.id === activeCategory ? styles.active : undefined
+                        }
+                        onClick={() => {
+                          this.handleCategoryChange(item.id);
+                        }}
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div> */}
+              {/* <div className={'col-12 col-sm-auto ' + styles.dots}>
                   <ul>{dots}</ul>
-                </div>
-              </div>
+                </div> */}
+              {/* </div> */}
             </div>
             <div className={'row ' + activePageStyle}>
               <div className={styles.ordersPage}>
@@ -185,35 +192,16 @@ class OrdersPage extends React.Component {
 
 OrdersPage.propTypes = {
   screenType: PropTypes.string,
-  // children: PropTypes.node,
-  categories: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      name: PropTypes.string,
-    })
-  ),
-  orders: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      data: PropTypes.string,
-      B1: PropTypes.number,
-      B2: PropTypes.number,
-      Danusia: PropTypes.number,
-      Slomka: PropTypes.number,
-      Kostka: PropTypes.number,
-      Weronki: PropTypes.number,
-      Babeczki: PropTypes.number,
-      Kolor: PropTypes.number,
-      Pianka: PropTypes.number,
-      BC: PropTypes.number,
-      BJ: PropTypes.number,
-      BCM: PropTypes.number,
-      BJM: PropTypes.number,
-    }),
-  ),
+  categories: PropTypes.array,
+  orders: PropTypes.array,
+  portions: PropTypes.array,
+  multipliers: PropTypes.array,
+  weights: PropTypes.array,
   setScreenType: PropTypes.func,
   maxOrdersOnPage: PropTypes.number,
   maxTotalDisplayedOrders: PropTypes.number,
+  fetchOrdersFromAPI: PropTypes.func,
+  fetchMultipliersFromAPI: PropTypes.func,
 
 };
 

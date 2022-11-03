@@ -45,10 +45,6 @@ Object.keys(initialState).forEach(item => {
 // merge all reducers
 const storeReducer = combineReducers(reducers);
 
-// const enhancers = compose(
-//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-// );
-
 const middleware = [thunk];
 
 const enhancers = compose(
@@ -63,15 +59,6 @@ const store = createStore(
   enhancers,
 
   console.log('initialStateeeee', initialState),
-
-
-
-  // composeWithDevTools(
-  //   applyMiddleware(thunk),
-  //   window.devToolsExtension ? window.devToolsExtension() : f => f
-  // )
-
-  // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 export default store;

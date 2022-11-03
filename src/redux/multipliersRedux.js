@@ -22,14 +22,14 @@ export const changeMultiplierInDB = payload => ({payload, type: CHANGE_MULTIPLIE
 export const changeMultiplierError = payload => ({ payload, type: CHANGE_MULTIPLIER_ERROR });
 
 export const fetchMultipliersFromAPI = payload => ({ payload, type: FETCH_MULTIPLIERS_FROM_API });
-export const fetchStarted = payload => ({ payload, type: FETCH_START });
+export const fetchStart = payload => ({ payload, type: FETCH_START });
 export const fetchSuccess = payload => ({ payload, type: FETCH_SUCCESS });
 export const fetchMultipliersError = payload => ({ payload, type: FETCH_MULTIPLIERS_ERROR });
 
 /* thunk creators */
 export const fetchMultipliers = () => {
   return (dispatch) => {
-    dispatch(fetchStarted());
+    dispatch(fetchStart());
     Axios
       .get('http://localhost:8000/api/multipliers')
       .then(res => {

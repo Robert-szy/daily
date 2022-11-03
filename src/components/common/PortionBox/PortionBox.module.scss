@@ -33,30 +33,51 @@
         // border-width: ;
         // justify-items: center;
 
-        th {
+
+
+        .portionsCell {
+          // min-width: 80px;
+          align-items: center;
           min-width: 80px;
 
-          .portionsBaza {
-            font-style: italic;
-            text-transform: none;
-          }
+          // .portionsBaza {
+          //   font-style: italic;
+          //   text-transform: none;
+          // }
 
-        }
-
-        p {
-          margin: 5px;
-          text-align: center;
-
-          span {
-            font-weight: bold;
+          p {
+            margin: 5px;
+            text-align: center;
+            span {
+              font-weight: bold;
+            }
           }
         }
+
+        th:nth-of-type(2) {
+          font-size: 10px;
+          font-style: italic;
+          // margin: auto;
+        }
+
+
+
+
+
+        // p {
+        //   margin: 5px;
+        //   text-align: center;
+
+        //   span {
+        //     font-weight: bold;
+        //   }
+        // }
       }
     }
 
     .portionsData {
-      // display: flex;
-      // flex-direction: column;
+      display: flex;
+      flex-direction: column;
       // justify-content: space-between;
       // // text-transform: none;
 
@@ -67,40 +88,48 @@
         flex-direction: row;
         justify-content: space-between;
         // justify-items: center;
+        // align-items: center;
 
         // border-bottom: 10px;
         // border-color: $text-color;
-        td {
+        // td {
+          // min-width: 80px;
+          // width: auto;
+          // margin: auto;
+        .portionsCell {
+          align-items: center;
           min-width: 80px;
 
-          // p {
-          //   // margin: 5px;
-          //   text-align: center;
-          //   span {
-          //     font-weight: bold;
-          //   }
-          // }
-        }
-        p {
-          margin: 5px;
-          text-align: center;
-          span {
-            font-weight: bold;
+          p {
+            margin: 5px;
+            text-align: center;
+            span {
+              font-weight: bold;
+            }
           }
         }
+        // }
+        // p {
+        //   margin: 5px;
+        //   text-align: center;
+        //   span {
+        //     font-weight: bold;
+        //   }
+        // }
 
         td:nth-of-type(2) {
           font-size: 10px;
           font-style: italic;
+          // margin: auto;
         }
-        td:nth-of-type(3) {
-          background-color: rgb(219, 245, 223);
-        }
-        td:nth-of-type(4) {
-          font-weight: bolder;
-          background-color: $caramel;
+        // td:nth-of-type(3) {
+        //   background-color: rgb(219, 245, 223);
+        // }
+        // td:nth-of-type(4) {
+        //   font-weight: bolder;
+        //   background-color: $caramel;
 
-        }
+        // }
       }
 
     }

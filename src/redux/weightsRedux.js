@@ -18,7 +18,7 @@ export const CHANGE_LAYER_VALUE_ERROR = createActionName('CHANGE_LAYER_VALUE_ERR
 export const FETCH_WEIGHTS_FROM_API = createActionName('FETCH_WEIGHTS_FROM_API');
 export const FETCH_START = createActionName('FETCH_START');
 export const FETCH_SUCCESS = createActionName('FETCH_SUCCESS');
-export const FETCH_WEIGHTS_ERROR = createActionName('FETCH_POTS_ERROR');
+export const FETCH_WEIGHTS_ERROR = createActionName('FETCH_ORDERS_ERROR');
 
 // action creators
 export const changeWeightValueInDB = payload => ({ payload, type: CHANGE_WEIGHT_VALUE_IN_DB });
@@ -61,9 +61,6 @@ export const changeWeightValue = (data) => {
 };
 
 export const changeLayerValue = (data) => {
-  console.log('id', data.id);
-  // console.log('layerNumber', layerNumber);
-  console.log('newWeightLayersArray', data.newWeightLayers);
   return (dispatch) => {
     Axios
       .put(`http://localhost:8000/api/weights/${data.id}`, {weightLayers: data.newWeightLayers})

@@ -21,10 +21,20 @@ exports.getId = async (req, res) => {
   }
 };
 
+// exports.getLayers = async (req, res) => {
+//   try {
+//     const con = await Weight.findOne({_id: req.params.id} );
+//     if(!con) res.status(404).json({ message: 'Not found' });
+//     else res.json(con);
+//   }
+//   catch(err) {
+//     res.status(500).json({ message: err });
+//   }
+// };
+
 exports.putId = async (req, res) => {
   try {
-    console.log('value', req.body.weightValue);
-    const con = await Weight.updateOne({_id: req.params.id}, { $set: { weightValue: req.body.weightValue }});
+    const con = await Weight.updateOne({_id: req.params.id}, { $set: { weightValue: req.body.weightValue, weightLayers: req.body.weightLayers }});
     if(!con) res.status(404).json({ message: 'Not found' });
     else res.json(con);
   }
