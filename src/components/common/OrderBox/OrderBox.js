@@ -199,9 +199,9 @@ const OrderBox = ({
                 <th scope='col' className={styles.cellData}>
                   <p><span>P7</span></p>
                 </th>
-                <th scope='col' className={styles.cellData}>
+                {/* <th scope='col' className={styles.cellData}>
                   <p><span>P8</span></p>
-                </th>
+                </th> */}
               </tr>
             </thead>
             <tbody className={styles.ordersBody}>
@@ -239,9 +239,9 @@ const OrderBox = ({
                 <td className={styles.cellData}>
                   <p>{b1Layers[6]*b1NewValue/b1Value}</p>
                 </td>
-                <td className={styles.cellData}>
+                {/* <td className={styles.cellData}>
                   <p>{b1Layers[7]*b1NewValue/b1Value}</p>
-                </td>
+                </td> */}
               </tr>
               <tr className={styles.ordersRow}>
                 <td className={styles.cellData}>
@@ -272,9 +272,9 @@ const OrderBox = ({
                 <td className={styles.cellData}>
                   <p>{b2Layers[6]*b2NewValue/b2Value}</p>
                 </td>
-                <td className={styles.cellData}>
+                {/* <td className={styles.cellData}>
                   <p>{b2Layers[7]*b2NewValue/b2Value}</p>
-                </td>
+                </td> */}
               </tr>
               <tr className={styles.ordersRow}>
                 <td className={styles.cellData}>
@@ -305,9 +305,9 @@ const OrderBox = ({
                 <td className={styles.cellData}>
                   <p>{danusiaLayers[6]*danusiaNewValue/danusiaValue}</p>
                 </td>
-                <td className={styles.cellData}>
+                {/* <td className={styles.cellData}>
                   <p>{danusiaLayers[7]*danusiaNewValue/danusiaValue}</p>
-                </td>
+                </td> */}
               </tr>
               <tr className={styles.ordersRow}>
                 <td className={styles.cellData}>
@@ -338,9 +338,9 @@ const OrderBox = ({
                 <td className={styles.cellData}>
                   <p>{slomkaLayers[6]*slomkaNewValue/slomkaValue}</p>
                 </td>
-                <td className={styles.cellData}>
+                {/* <td className={styles.cellData}>
                   <p>{slomkaLayers[7]*slomkaNewValue/slomkaValue}</p>
-                </td>
+                </td> */}
               </tr>
               <tr className={styles.ordersRow}>
                 <td className={styles.cellData}>
@@ -371,9 +371,9 @@ const OrderBox = ({
                 <td className={styles.cellData}>
                   <p>{kosteczkaLayers[6]*kosteczkaNewValue/kosteczkaValue}</p>
                 </td>
-                <td className={styles.cellData}>
+                {/* <td className={styles.cellData}>
                   <p>{kosteczkaLayers[7]*kosteczkaNewValue/kosteczkaValue}</p>
-                </td>
+                </td> */}
               </tr>
               <tr className={styles.ordersRow}>
                 <td className={styles.cellData}>
@@ -404,9 +404,9 @@ const OrderBox = ({
                 <td className={styles.cellData}>
                   <p>{weronkiLayers[6]*weronkiNewValue/weronkiValue}</p>
                 </td>
-                <td className={styles.cellData}>
+                {/* <td className={styles.cellData}>
                   <p>{weronkiLayers[7]*weronkiNewValue/weronkiValue}</p>
-                </td>
+                </td> */}
               </tr>
               <tr className={styles.ordersRow}>
                 <td className={styles.cellData}>
@@ -437,9 +437,9 @@ const OrderBox = ({
                 <td className={styles.cellData}>
                   <p>{miniLayers[6]*miniNewValue/miniValue}</p>
                 </td>
-                <td className={styles.cellData}>
+                {/* <td className={styles.cellData}>
                   <p>{miniLayers[7]*miniNewValue/miniValue}</p>
-                </td>
+                </td> */}
               </tr>
               <tr className={styles.ordersRow}>
                 <td className={styles.cellData}>
@@ -470,9 +470,9 @@ const OrderBox = ({
                 <td className={styles.cellData}>
                   <p>{babeczkiLayers[6]*babeczkiNewValue/babeczkiValue}</p>
                 </td>
-                <td className={styles.cellData}>
+                {/* <td className={styles.cellData}>
                   <p>{babeczkiLayers[7]*babeczkiNewValue/babeczkiValue}</p>
-                </td>
+                </td> */}
               </tr>
               <tr className={styles.ordersRow}>
                 <td className={styles.cellData}>
@@ -503,9 +503,9 @@ const OrderBox = ({
                 <td className={styles.cellData}>
                   <p>{kolorLayers[6]*kolorNewValue/kolorValue}</p>
                 </td>
-                <td className={styles.cellData}>
+                {/* <td className={styles.cellData}>
                   <p>{kolorLayers[7]*kolorNewValue/kolorValue}</p>
-                </td>
+                </td> */}
               </tr>
               <tr className={styles.ordersRow}>
                 <td className={styles.cellData}>
@@ -536,9 +536,9 @@ const OrderBox = ({
                 <td className={styles.cellData}>
                   <p>{piankaLayers[6]*piankaNewValue/piankaValue}</p>
                 </td>
-                <td className={styles.cellData}>
+                {/* <td className={styles.cellData}>
                   <p>{piankaLayers[7]*piankaNewValue/piankaValue}</p>
-                </td>
+                </td> */}
               </tr>
               <tr className={styles.ordersRow}>
                 <td className={styles.cellData}>
@@ -568,9 +568,9 @@ const OrderBox = ({
                 <td className={styles.cellData}>
                   <p>{porcja7}</p>
                 </td>
-                <td className={styles.cellData}>
+                {/* <td className={styles.cellData}>
                   <p>{porcja8}</p>
-                </td>
+                </td> */}
               </tr>
             </tbody>
           </div>

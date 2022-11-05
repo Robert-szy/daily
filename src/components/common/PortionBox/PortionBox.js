@@ -16,7 +16,7 @@ const PortionBox = ({
   porcja5,
   porcja6,
   porcja7,
-  porcja8,
+  // porcja8,
 }) => {
 
   const multipliers = useSelector((state) => state.multipliers.multipliers);
@@ -690,88 +690,8 @@ const PortionBox = ({
                 </td>
               </tr>
 
-              <tr className={styles.portionsRow}>
-                <td className={styles.portionsCell}>
-                  {/* <div className={styles.portionsCell}> */}
-                  <p><span>P8:</span></p>
-                  {/* </div> */}
-                </td>
-                <td className={styles.portionsCell}>
-                  {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja8}</p>
-                  {/* </div> */}
-                </td>
-                <td className={styles.portionsCell}>
-                  {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja8 * water}</p>
-                  {/* </div> */}
-                </td>
-                <td className={styles.portionsCell}>
-                  {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja8 * agarSummer}</p>
-                  {/* </div> */}
-                </td>
-                <td className={styles.portionsCell}>
-                  {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja8 * sugar}</p>
-                  {/* </div> */}
-                </td>
-                <td className={styles.portionsCell}>
-                  {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja8 * fat}</p>
-                  {/* </div> */}
-                </td>
-                <td className={styles.portionsCell}>
-                  {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja8 * acid}</p>
-                  {/* </div> */}
-                </td>
-                <td className={styles.portionsCell}>
-                  {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja8 * foamProtein}</p>
-                  {/* </div> */}
-                </td>
-                <td className={styles.portionsCell}>
-                  {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja8 * syrup}</p>
-                  {/* </div> */}
-                </td>
-                <td className={styles.portionsCell}>
-                  {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja8 * apple}</p>
-                  {/* </div> */}
-                </td>
-                <td className={styles.portionsCell}>
-                  {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja8 * lemon}</p>
-                  {/* </div> */}
-                </td>
-                <td className={styles.portionsCell}>
-                  {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja8 * kiwi}</p>
-                  {/* </div> */}
-                </td>
-                <td className={styles.portionsCell}>
-                  {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja8 * orange}</p>
-                  {/* </div> */}
-                </td>
-                <td className={styles.portionsCell}>
-                  {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja8 * raspberry}</p>
-                  {/* </div> */}
-                </td>
-                <td className={styles.portionsCell}>
-                  {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja8 * cherry}</p>
-                  {/* </div> */}
-                </td>
-                <td className={styles.portionsCell}>
-                  {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja8 * vanilla}</p>
-                  {/* </div> */}
-                </td>
-              </tr>
+
+
             </tbody>
           </table>
         </div>
@@ -792,7 +712,7 @@ PortionBox.propTypes = {
   porcja5: PropTypes.number,
   porcja6: PropTypes.number,
   porcja7: PropTypes.number,
-  porcja8: PropTypes.number,
+  // porcja8: PropTypes.number,
   multipliers: PropTypes.array,
   // porcja7: PropTypes.number,
   // porcja8: PropTypes.number,
