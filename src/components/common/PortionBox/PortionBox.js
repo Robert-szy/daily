@@ -532,77 +532,77 @@ const PortionBox = ({
                 </td>
                 <td className={styles.portionsCell}>
                   {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja6}</p>
+                  <p>{porcja6.toFixed(2)}</p>
                   {/* </div> */}
                 </td>
                 <td className={styles.portionsCell}>
                   {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja6 * water}</p>
+                  <p>{(porcja6 * water).toFixed(2)}</p>
                   {/* </div> */}
                 </td>
                 <td className={styles.portionsCell}>
                   {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja6 * agarSummer}</p>
+                  <p>{(porcja6 * agarSummer).toFixed(2)}</p>
                   {/* </div> */}
                 </td>
                 <td className={styles.portionsCell}>
                   {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja6 * sugar}</p>
+                  <p>{(porcja6 * sugar).toFixed(2)}</p>
                   {/* </div> */}
                 </td>
                 <td className={styles.portionsCell}>
                   {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja6 * fat}</p>
+                  <p>{(porcja6 * fat).toFixed(2)}</p>
                   {/* </div> */}
                 </td>
                 <td className={styles.portionsCell}>
                   {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja6 * acid}</p>
+                  <p>{(porcja6 * acid).toFixed(2)}</p>
                   {/* </div> */}
                 </td>
                 <td className={styles.portionsCell}>
                   {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja6 * foamProtein}</p>
+                  <p>{(porcja6 * foamProtein).toFixed(2)}</p>
                   {/* </div> */}
                 </td>
                 <td className={styles.portionsCell}>
                   {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja6 * syrup}</p>
+                  <p>{(porcja6 * syrup).toFixed(2)}</p>
                   {/* </div> */}
                 </td>
                 <td className={styles.portionsCell}>
                   {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja6 * apple}</p>
+                  <p>{(porcja6 * apple).toFixed(2)}</p>
                   {/* </div> */}
                 </td>
                 <td className={styles.portionsCell}>
                   {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja6 * lemon}</p>
+                  <p>{(porcja6 * lemon).toFixed(2)}</p>
                   {/* </div> */}
                 </td>
                 <td className={styles.portionsCell}>
                   {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja6 * kiwi}</p>
+                  <p>{(porcja6 * kiwi).toFixed(2)}</p>
                   {/* </div> */}
                 </td>
                 <td className={styles.portionsCell}>
                   {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja6 * orange}</p>
+                  <p>{(porcja6 * orange).toFixed(2)}</p>
                   {/* </div> */}
                 </td>
                 <td className={styles.portionsCell}>
                   {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja6 * raspberry}</p>
+                  <p>{(porcja6 * raspberry).toFixed(2)}</p>
                   {/* </div> */}
                 </td>
                 <td className={styles.portionsCell}>
                   {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja6 * cherry}</p>
+                  <p>{(porcja6 * cherry).toFixed(2)}</p>
                   {/* </div> */}
                 </td>
                 <td className={styles.portionsCell}>
                   {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja6 * vanilla}</p>
+                  <p>{(porcja6 * vanilla).toFixed(2)}</p>
                   {/* </div> */}
                 </td>
               </tr>
@@ -615,77 +615,77 @@ const PortionBox = ({
                 </td>
                 <td className={styles.portionsCell}>
                   {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja7}</p>
+                  <p>{porcja7.toFixed(2)}</p>
                   {/* </div> */}
                 </td>
                 <td className={styles.portionsCell}>
                   {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja7 * water}</p>
+                  <p>{(porcja7 * water).toFixed(2)}</p>
                   {/* </div> */}
                 </td>
                 <td className={styles.portionsCell}>
                   {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja7 * agarSummer}</p>
+                  <p>{(porcja7 * agarSummer).toFixed(2)}</p>
                   {/* </div> */}
                 </td>
                 <td className={styles.portionsCell}>
                   {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja7 * sugar}</p>
+                  <p>{(porcja7 * sugar).toFixed(2)}</p>
                   {/* </div> */}
                 </td>
                 <td className={styles.portionsCell}>
                   {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja7 * fat}</p>
+                  <p>{(porcja7 * fat).toFixed(2)}</p>
                   {/* </div> */}
                 </td>
                 <td className={styles.portionsCell}>
                   {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja7 * acid}</p>
+                  <p>{(porcja7 * acid).toFixed(2)}</p>
                   {/* </div> */}
                 </td>
                 <td className={styles.portionsCell}>
                   {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja7 * jellyProtein}</p>
+                  <p>{(porcja7 * jellyProtein).toFixed(2)}</p>
                   {/* </div> */}
                 </td>
                 <td className={styles.portionsCell}>
                   {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja7 * syrup}</p>
+                  <p>{(porcja7 * syrup).toFixed(2)}</p>
                   {/* </div> */}
                 </td>
                 <td className={styles.portionsCell}>
                   {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja7 * apple}</p>
+                  <p>{(porcja7 * apple).toFixed(2)}</p>
                   {/* </div> */}
                 </td>
                 <td className={styles.portionsCell}>
                   {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja7 * lemon}</p>
+                  <p>{(porcja7 * lemon).toFixed(2)}</p>
                   {/* </div> */}
                 </td>
                 <td className={styles.portionsCell}>
                   {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja7 * kiwi}</p>
+                  <p>{(porcja7 * kiwi).toFixed(2)}</p>
                   {/* </div> */}
                 </td>
                 <td className={styles.portionsCell}>
                   {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja7 * orange}</p>
+                  <p>{(porcja7 * orange).toFixed(2)}</p>
                   {/* </div> */}
                 </td>
                 <td className={styles.portionsCell}>
                   {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja7 * raspberry}</p>
+                  <p>{(porcja7 * raspberry).toFixed(2)}</p>
                   {/* </div> */}
                 </td>
                 <td className={styles.portionsCell}>
                   {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja7 * cherry}</p>
+                  <p>{(porcja7 * cherry).toFixed(2)}</p>
                   {/* </div> */}
                 </td>
                 <td className={styles.portionsCell}>
                   {/* <div className={styles.portionsCell}> */}
-                  <p>{porcja7 * vanilla}</p>
+                  <p>{(porcja7 * vanilla).toFixed(2)}</p>
                   {/* </div> */}
                 </td>
               </tr>

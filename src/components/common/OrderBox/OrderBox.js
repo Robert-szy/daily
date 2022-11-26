@@ -1,14 +1,24 @@
-import React from 'react';
+import React, {useState } from 'react';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import styles from './OrderBox.module.scss';
 import PortionBox from '../PortionBox/PortionBoxContainer';
+// import Slider from '@react-native-community/slider';
+import Slider from 'rc-slider';
+import 'rc-slider/assets/index.css';
 // import { get } from 'http';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 // import Button from '../Button/Button';
 // import { Link } from 'react-router-dom';
 
+const useForceUpdate = () => {
+  console.log('useForceUpdate');
+  const [value, setValue] = useState(0); // integer state
+  return () => setValue(value => value + 1); // update state to force render
+  // An function that increment 👆🏻 the previous state like here
+  // is better than directly setting `value + 1`
+};
 
 const OrderBox = ({
   id,
@@ -31,18 +41,21 @@ const OrderBox = ({
   yola,
 
   pots,
+
   // handleAddClick,
 }) => {
+
+  const forceUpdate = useForceUpdate();
 
   const weights = useSelector((state) => state.weights.weights);
 
   const babeczkiValue = weights.find(item => item.id === 'babeczki').weightValue;
   const babeczkiNewValue = babeczkiValue;
-  const babeczkiLayers = weights.find(item => item.id === 'babeczki').weightLayers;
+  let babeczkiLayers = weights.find(item => item.id === 'babeczki').weightLayers;
 
   const b1Value = weights.find(item => item.id === 'b1').weightValue;
   const b1NewValue = b1Value;
-  const b1Layers = weights.find(item => item.id === 'b1').weightLayers;
+  let b1Layers = weights.find(item => item.id === 'b1').weightLayers;
 
   const b2Value = weights.find(item => item.id === 'b2').weightValue;
   const b2NewValue = b2Value;
@@ -76,8 +89,6 @@ const OrderBox = ({
   const piankaNewValue = piankaValue;
   const piankaLayers = weights.find(item => item.id === 'pianka').weightLayers;
 
-
-  // const pots = useState(1);
   const porcja1 = b1Layers[0]*b1NewValue/b1Value +
                   b2Layers[0]*b2NewValue/b2Value +
                   danusiaLayers[0]*danusiaNewValue/danusiaValue +
@@ -148,25 +159,114 @@ const OrderBox = ({
                   babeczkiLayers[6]*babeczkiNewValue/babeczkiValue +
                   kolorLayers[6]*kolorNewValue/kolorValue +
                   piankaLayers[6]*piankaNewValue/piankaValue;
-  const porcja8 = b1Layers[7]*b1NewValue/b1Value +
-                  b2Layers[7]*b2NewValue/b2Value +
-                  danusiaLayers[7]*danusiaNewValue/danusiaValue +
-                  slomkaLayers[7]*slomkaNewValue/slomkaValue +
-                  kosteczkaLayers[7]*kosteczkaNewValue/kosteczkaValue +
-                  weronkiLayers[7]*weronkiNewValue/weronkiValue +
-                  miniLayers[7]*miniNewValue/miniValue +
-                  babeczkiLayers[7]*babeczkiNewValue/babeczkiValue +
-                  kolorLayers[7]*kolorNewValue/kolorValue +
-                  piankaLayers[7]*piankaNewValue/piankaValue;
-  const portions = {porcja1, porcja2, porcja3, porcja4, porcja5, porcja6, porcja7, porcja8};
-  // console.log('portions in orderbox', portions);
+  // const porcja8 = b1Layers[7]*b1NewValue/b1Value +
+  //                 b2Layers[7]*b2NewValue/b2Value +
+  //                 danusiaLayers[7]*danusiaNewValue/danusiaValue +
+  //                 slomkaLayers[7]*slomkaNewValue/slomkaValue +
+  //                 kosteczkaLayers[7]*kosteczkaNewValue/kosteczkaValue +
+  //                 weronkiLayers[7]*weronkiNewValue/weronkiValue +
+  //                 miniLayers[7]*miniNewValue/miniValue +
+  //                 babeczkiLayers[7]*babeczkiNewValue/babeczkiValue +
+  //                 kolorLayers[7]*kolorNewValue/kolorValue +
+  //                 piankaLayers[7]*piankaNewValue/piankaValue;
+  const portions = {porcja1, porcja2, porcja3, porcja4, porcja5, porcja6, porcja7};
+  console.log('portions in orderbox', portions);
   // console.log('b1 in orderbox', yola);
+
+
+
+  const onB1SliderChange = (value) => {
+    console.log('value', value);
+    const shift = value - checkDefaultValue(b1Layers);
+    console.log('shift', shift);
+    b1Layers = rotateArray (b1Layers, shift);
+    console.log('b1Layers', b1Layers);
+    return value;
+  };
+
+  const onBabeczkiSliderChange = (value) => {
+    console.log('value', value);
+    const shift = value - checkDefaultValue(babeczkiLayers);
+    console.log('shift', shift);
+    babeczkiLayers = rotateArray (babeczkiLayers, shift);
+    console.log('babeczkiLayers', babeczkiLayers);
+    return value;
+  };
+
+  const rotateArray = (arr, k) => {
+    if (k>0){
+      for (let i = 0; i < k; i++) {
+        arr.unshift(arr.pop());
+      }
+    }
+    else if (k<0) {
+      for (let i = 0; i < Math.abs(k)+1; i++) {
+        arr.push(arr.shift());
+      }
+    }
+    console.log(arr);
+    return arr;
+
+  };
+
+  // onAfterChange = (value) => {
+  //   console.log(value); //eslint-disable-line
+  // };
+
+  const checkDefaultValue = (array) => {
+    let tempDefaultValue = 0;
+    for (let i=0; i < array.length; i++) {
+      if (array[i]!=='0') {
+        tempDefaultValue=i;
+        console.log('tempdefval', tempDefaultValue);
+        return tempDefaultValue;
+      }
+    }
+  };
+
+  const checkMaxSliderSteps = (array) => {
+    let tempStartValue = 0;
+    let tempEndValue = 0;
+    let maxSliderSteps = 0;
+
+    let indexOfFirstNotEmpty = array.lastIndexOf(0)+1;
+    console.log('indexoffirstnotempty', indexOfFirstNotEmpty);
+    let indexOfLastNotEmpty = array.IndexOf(0,indexOfFirstNotEmpty);
+    console.log('indexoflastnotempty', indexOfLastNotEmpty);
+
+    for (let i=0; i<array.length; i++) {
+      if (array[i]!=='0') {
+        tempStartValue=i;
+        break;
+      }
+    }
+    for (let i=tempStartValue; i<array.length; i++) {
+      if (array[i] ==='0') {
+        tempEndValue=i;
+        break;
+      }
+      tempEndValue=i;
+    }
+
+    const weightsLength = tempEndValue - tempStartValue;
+    if ((array.length - weightsLength)%2===0){
+      maxSliderSteps = 1 + (array.length - weightsLength)/2;
+    }
+    else {
+      maxSliderSteps = array.length - weightsLength - 2;
+    }
+
+    return maxSliderSteps;
+
+  };
+
+
 
   return (
     <div className={styles.root}>
       <div className = {styles.ordersBorder}>
         <div className={styles.ordersData}>
-          <p><span>Data produkcji:</span></p><p>{data}</p>
+          <p><span>Data produkcji:</span></p><p>{data}/</p>
           <p>Aktualny czas: {new Date().toLocaleTimeString()}.</p>
         </div>
         <div className={styles.ordersBlock}>
@@ -177,6 +277,9 @@ const OrderBox = ({
                 <th scope='col' className={styles.cellData}><p>\</p></th>
                 <th scope='col' className={styles.cellData}>
                   <p><span>Ilość</span></p>
+                </th>
+                <th scope='col' className={styles.cellData}>
+                  <p><span>Shift</span></p>
                 </th>
                 <th scope='col' className={styles.cellData}>
                   <p><span>P1</span></p>
@@ -219,6 +322,19 @@ const OrderBox = ({
                   <input id={'b10'} defaultValue={b1Value}></input>
                 </td>
                 <td className={styles.cellData}>
+                  <p>
+                    <Slider
+                      defaultValue={checkDefaultValue(b1Layers)}
+                      // value={onB1SliderChange}
+                      min={1}
+                      max={checkMaxSliderSteps(b1Layers)}
+                      dots={true}
+                      onChange={onB1SliderChange}
+                      onAfterChange={forceUpdate}
+                    />
+                  </p>
+                </td>
+                <td className={styles.cellData}>
                   <p>{b1Layers[0]*b1NewValue/b1Value}</p>
                 </td>
                 <td className={styles.cellData}>
@@ -250,6 +366,18 @@ const OrderBox = ({
 
                 <td className={styles.cellData}>
                   <input id={'b20'} defaultValue={b2Value}></input>
+                </td>
+                <td className={styles.cellData}>
+                  <p>
+                    <Slider
+                      defaultValue={checkDefaultValue(b2Layers)}
+                      // value={1}
+                      min={1}
+                      max={checkMaxSliderSteps(b2Layers)}
+                      dots={true}
+                      // onChange={this.onSliderChange}
+                    />
+                  </p>
                 </td>
                 <td className={styles.cellData}>
                   <p>{b2Layers[0]*b2NewValue/b2Value}</p>
@@ -285,6 +413,18 @@ const OrderBox = ({
                   <input id={'danusia0'} defaultValue={danusiaValue}></input>
                 </td>
                 <td className={styles.cellData}>
+                  <p>
+                    <Slider
+                      defaultValue={checkDefaultValue(danusiaLayers)}
+                      // value={1}
+                      min={1}
+                      max={checkMaxSliderSteps(danusiaLayers)}
+                      dots={true}
+                      // onChange={this.onSliderChange}
+                    />
+                  </p>
+                </td>
+                <td className={styles.cellData}>
                   <p>{danusiaLayers[0]*danusiaNewValue/danusiaValue}</p>
                 </td>
                 <td className={styles.cellData}>
@@ -316,6 +456,18 @@ const OrderBox = ({
 
                 <td className={styles.cellData}>
                   <input id={'slomka0'} defaultValue={slomkaValue}></input>
+                </td>
+                <td className={styles.cellData}>
+                  <p>
+                    <Slider
+                      defaultValue={checkDefaultValue(slomkaLayers)}
+                      // value={1}
+                      min={1}
+                      max={checkMaxSliderSteps(slomkaLayers)}
+                      dots={true}
+                      // onChange={this.onSliderChange}
+                    />
+                  </p>
                 </td>
                 <td className={styles.cellData}>
                   <p>{slomkaLayers[0]*slomkaNewValue/slomkaValue}</p>
@@ -351,6 +503,18 @@ const OrderBox = ({
                   <input id={'kostka0'} defaultValue={kosteczkaValue}></input>
                 </td>
                 <td className={styles.cellData}>
+                  <p>
+                    <Slider
+                      defaultValue={checkDefaultValue(kosteczkaLayers)}
+                      // value={1}
+                      min={1}
+                      max={checkMaxSliderSteps(kosteczkaLayers)}
+                      dots={true}
+                      // onChange={this.onSliderChange}
+                    />
+                  </p>
+                </td>
+                <td className={styles.cellData}>
                   <p>{kosteczkaLayers[0]*kosteczkaNewValue/kosteczkaValue}</p>
                 </td>
                 <td className={styles.cellData}>
@@ -379,9 +543,20 @@ const OrderBox = ({
                 <td className={styles.cellData}>
                   <p><span>Weronki:</span></p>
                 </td>
-
                 <td className={styles.cellData}>
                   <input id={'weronki0'} defaultValue={weronkiValue}></input>
+                </td>
+                <td className={styles.cellData}>
+                  <p>
+                    <Slider
+                      defaultValue={checkDefaultValue(weronkiLayers)}
+                      // value={1}
+                      min={1}
+                      max={checkMaxSliderSteps(weronkiLayers)}
+                      dots={true}
+                      // onChange={this.onSliderChange}
+                    />
+                  </p>
                 </td>
                 <td className={styles.cellData}>
                   <p>{weronkiLayers[0]*weronkiNewValue/weronkiValue}</p>
@@ -417,6 +592,18 @@ const OrderBox = ({
                   <input id={'mini0'} defaultValue={miniValue}></input>
                 </td>
                 <td className={styles.cellData}>
+                  <p>
+                    <Slider
+                      defaultValue={checkDefaultValue(miniLayers)}
+                      // value={1}
+                      min={1}
+                      max={checkMaxSliderSteps(miniLayers)}
+                      dots={true}
+                      // onChange={this.onSliderChange}
+                    />
+                  </p>
+                </td>
+                <td className={styles.cellData}>
                   <p>{miniLayers[0]*miniNewValue/miniValue}</p>
                 </td>
                 <td className={styles.cellData}>
@@ -448,6 +635,21 @@ const OrderBox = ({
 
                 <td className={styles.cellData}>
                   <input id={'babeczki0'} defaultValue={babeczkiValue}></input>
+                </td>
+                <td className={styles.cellData}>
+                  <p>
+                    <Slider
+                      defaultValue={
+                        checkDefaultValue(babeczkiLayers)
+                      }
+                      // value={1}
+                      min={1}
+                      max={checkMaxSliderSteps(babeczkiLayers)}
+                      dots={true}
+                      onChange={onBabeczkiSliderChange}
+                      onAfterChange={forceUpdate}
+                    />
+                  </p>
                 </td>
                 <td className={styles.cellData}>
                   <p>{babeczkiLayers[0]*babeczkiNewValue/babeczkiValue}</p>
@@ -483,6 +685,18 @@ const OrderBox = ({
                   <input id={'kolor0'} defaultValue={kolorValue}></input>
                 </td>
                 <td className={styles.cellData}>
+                  <p>
+                    <Slider
+                      defaultValue={checkDefaultValue(kolorLayers)}
+                      // value={1}
+                      min={1}
+                      max={checkMaxSliderSteps(kolorLayers)}
+                      dots={true}
+                      // onChange={this.onSliderChange}
+                    />
+                  </p>
+                </td>
+                <td className={styles.cellData}>
                   <p>{kolorLayers[0]*kolorNewValue/kolorValue}</p>
                 </td>
                 <td className={styles.cellData}>
@@ -516,6 +730,18 @@ const OrderBox = ({
                   <input id={'pianka0'} defaultValue={piankaValue}></input>
                 </td>
                 <td className={styles.cellData}>
+                  <p>
+                    <Slider
+                      defaultValue={checkDefaultValue(piankaLayers)}
+                      // value={1}
+                      min={1}
+                      max={checkMaxSliderSteps(piankaLayers)}
+                      dots={true}
+                      // onChange={this.onSliderChange}
+                    />
+                  </p>
+                </td>
+                <td className={styles.cellData}>
                   <p>{piankaLayers[0]*piankaNewValue/piankaValue}</p>
                 </td>
                 <td className={styles.cellData}>
@@ -543,6 +769,9 @@ const OrderBox = ({
               <tr className={styles.ordersRow}>
                 <td className={styles.cellData}>
                   <p><span>Suma:</span></p>
+                </td>
+                <td className={styles.cellData}>
+                  <p> </p>
                 </td>
                 <td className={styles.cellData}>
                   <p> </p>
